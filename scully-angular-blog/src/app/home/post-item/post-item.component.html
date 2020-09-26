@@ -1,0 +1,33 @@
+<div class="content-container">
+    <div class="content-items">
+        <div class="content-header">
+            <div class="content-header-date">
+                {{ blog.createdDate }}
+            </div>
+            <div class="content-header-tag">
+                <ng-container *ngFor="let item of blog.tags">
+                    <div class="tag-item">
+                        <a [routerLink]="['/tags', item]">
+                            {{ item }}
+                        </a>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+        <div class="content-title">
+            <a [routerLink]=[blog.route]>
+                {{ blog.title }}
+            </a>
+        </div>
+        <div class="content-abstract">
+            <p>
+                {{ blog.description }}
+            </p>
+        </div>
+        <div class="content-footer">
+            <a [routerLink]=[blog.route]>
+                Read more...
+            </a>
+        </div>
+    </div>
+</div>

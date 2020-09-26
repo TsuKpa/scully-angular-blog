@@ -1,0 +1,28 @@
+h1 {
+  color: rgb(51, 6, 37);
+  font-family: "Yeseva One", cursive;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+
+.blog-post {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  max-width: 900px;
+  width: 80%;
+  padding: 30px;
+}
+
+.blog-post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+  width: 90%;
+}
+
+.blog-post li {
+  list-style-type: disc;
+}

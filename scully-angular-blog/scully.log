@@ -1,0 +1,179 @@
+
+We encountered a problem while reading the routes from your applications source.
+This might happen when there are lazy-loaded routes, that are not loaded,
+Or when there are paths we can not resolve statically.
+Check the routes in your app, rebuild and retry.
+[33m(You can inspect the error by passing the --showGuessError flag[39m
+
+[32mWhen there are extraRoutes in your config, we will still try to render those.[39m
+
+
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "[33mnpm run scully -- --scanRoutes[39m"
+----------------------------------running in watch-mode, routefile in source assets will not be updated
+
+****************************************************************************************
+This is a development tool for Scully applications.
+You can ignore the warning (TLS) or run scully with --no-warning
+****************************************************************************************
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-first-post-is-the-deepest[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-first-post-is-the-deepest[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-second-post[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-second-post[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-first-post-is-the-deepest[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-first-post-is-the-deepest[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-second-post[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-second-post[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-first-post-is-the-deepest[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-first-post-is-the-deepest[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-second-post[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-second-post[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4b_grGwkql7E3RjgPlj7FjXWTSb6GiYICGO[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-first-post-is-the-deepest[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-first-post-is-the-deepest[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/the-second-post[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/the-second-post[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
+
+      ----------------
+      Error, missing "[33m<scully-content>[39m" in route "[33m/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "[33mhttp://localhost:4200/blog/___UNPUBLISHED___kfgq4o4h_pazFZ5LhfI1C4cb9luc7EBIfjkh5bzMs[39m"
+      when you serve your app with [33mng serve[39m and then in the browsers console run:
+      [33mdocument.querySelector('scully-content')[39m
+      ----------------
+      
