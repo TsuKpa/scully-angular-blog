@@ -1,0 +1,3 @@
+[build]
+  command = "npm run jam-it"
+  publish = "dist/static"
