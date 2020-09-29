@@ -1,548 +1,341 @@
 ---
-title: The Test Post
-description: blog description
-author: "TsuKpa"
-published: true
+title: Creating a Pre-rendered Home Page with Angular and Scully
+description: >-
+  Ready to start to transition your Angular site to the Jamstack? Why not start
+  with your homepage where you can pre-render your content using Scully and
+  store your assets on the cloud? This tutorial will get you up and deployed in
+  no time!
+authors:
+  - Tara Z. Manicsic
+createdDate: 22 Sep, 2020
+lastmod: "2020-04-03"
 topics:
   - tutorials
-keywords:
-  - blog
-  - test
 tags:
-  - angular
+  - Angular
 tweet: ""
-createdDate: "25 Sep, 2020"
 format: blog
-canonical_url: https://www.netlify.com/blog/2020/05/04/building-a-markdown-blog-with-next-9.4-and-netlify/
-relatedposts:
-  - Create a Blog with Contentful and Nuxt
-  - Creating a blog with Middleman and Netlify CMS
+canonical_url: https://www.netlify.com/blog/2020/04/03/creating-a-pre-rendered-home-page-with-angular-and-scully/
+seo:
+  metadescription: >-
+    Learn how to start transitioning Angular sites to the Jamstack. In this tutorial, we pre-render homepage content using Scully and store assets on the cloud. Get up and deployed in no time!
+  metatitle: Create Fast, Pre-rendered Pages in Angular using Scully
+publish: true
 ---
 
-# The Test Post
+# Creating a Pre-rendered Home Page with Angular and Scully
 
-**This guide was most recently updated on Wed, June 3rd, 2020 to be compatible with Next 9.4+.**
+One of the fundamental elements of creating a site with the Jamstack architecture is pre-rendering content. This allows for faster delivery of your content, fewer security vulnerabilities, and immutable content. For this post, we will be storing static images in [Cloudinary](https://cloudinary.com/), a cloud service for images while also pre-rendering our assets. This means one less thing we have to manage ourselves or worry about. Yay!
 
-What’s Next? Well, it’s not in the past, amirite? Ha! Ha ha! Okay but for real, [Next.js](https://nextjs.org/) is a framework for building React applications, and you can bet your bottom that you can make great [Jamstack applications](https://www.netlify.com/jamstack/) on Netlify with it! Next has become rather popular because of its file-based routing, how easy it is to get started, and how flexible it is. In fact, it’s so flexible that there aren't many “rules” in place for how you want to implement your projects and sites. That being said, here’s how to build a Markdown blog with the latest Next (9.4.4, at the time of writing), and how to deploy it to Netlify.
+## Cloud Content
 
-If you’d like to skip all of the jabber and just go straight to deploying, go ahead and [check out the repo for this project](https://github.com/cassidoo/next-netlify-blog-starter). It’s got a nice **[Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-blog-starter&utm_source=github&utm_medium=blogstarter-cs&utm_campaign=devex)** button that’ll do all of the hard work for you, and you can get right to customizing it to your heart’s content!
+There are many benefits to having your media stored somewhere that isn't your project. Git is made to manage code, but media files?—Not really their forte. Having a site that is dedicated to that is a great way of delegating tasks to skilled providers. In general, when building for the Jamstack, delegation is the key to a robust site that is easy to manage and maintain. For our use case, we will be offloading the work of image management. We're using Cloudinary today but there are others too (like [Netlify](https://www.netlify.com/products/large-media/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex) or [Imgix](https://www.imgix.com/)).
 
-Heads up, this tutorial assumes you know React, JavaScript, and CSS. If you need help on any of those fronts, feel free to ask questions in the [Netlify Community](https://community.netlify.com/)!
+## Premeditative Pre-rendering
 
-{{< toc >}}
+The answer to a fast site lies in serving static assets from a CDN. Sites served in this manner are faster because one less trip to the server means latency is drastically reduced. The sites that we make with Angular haven't really been that. You can tout a lot of things about Angular, but size isn't at the top of the list. The Angular community has been asking for a path to pre-rendering for quite some time now.
 
-## Setting up our Next.js project
+To be fair, there has been one. Angular Universal gave you the option to pre-render. So, there was that. With the Angular 9 release there have been updates to the pre-render process in Universal. This indicates that the Angular team is hearing and heeding the requests of developers, which is a positive sign for a mature community like Angular. Nonetheless, people were still eager for a Static Site Generator for Angular.
 
-When you want to start a new Next app, open up your terminal and run:
+### The Angular SSG is Out There
 
-```shell
-npm init next-app
+Finally! [HeroDevs](https://herodevs.com/) to the rescue. At the end of last year the team at [HeroDevs released the alpha version of Scully](https://www.netlify.com/blog/2019/12/16/introducing-scully-the-angular-static-site-generator/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex), Angular's first, designated Static Site Generator (SSG). Not only does [Scully](https://scully.io/) make it ridiculously easy to pre-render any Angular site with familiar Angular commands (even with Angular.js apps). We've been waiting for this for a while and the team keeps improving it everyday. They are super open to feedback, [so join the fun on GitHub!](https://github.com/scullyio/scully)
+
+This was a clear signal that the Angular community is invested in being a part of the Jamstack architecture and ecosystem. For much too long (in my opinion), Angular had not been heavily involved in the Jamstack ecosystem. This might very well be due to [the Angular community not being aware of all that a Jamstack app is capable of](https://www.netlify.com/blog/2019/10/30/whats-angular-in-the-jamstack-it-sounds-delicious/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex). But it's clear that the tools to create a clear path of Angular integration haven't existed before. The creation of Scully was a huge step on this path and I can not wait to see what comes next.
+
+Now that Angular has finally cemented its place in the Jamstack landscape with Scully, let's dive into coding some pre-rendered Angular together!
+
+## Time to Code
+
+In this exercise we're going to start by adding a few images and some text. Basically, we want to populate the page and get comfortable with optimizing and adding content from the cloud. Then we'll use Scully to create a pre-rendered, static version of our site.
+
+> [🐙 Here's a link to the repository of the final project in all its coded glory](https://github.com/tzmanics/workshop-angular-in-the-jamstack/tree/master/prerendered-home-page/prerendered-home-page).
+
+Here are the steps to today's coding adventure:
+
+- prepare assets in Cloudinary
+- fill home component with content
+- use [`ng add`](https://angular.io/cli/add) to incorporate Scully
+- get whiplash from our site speed
+
+Code with me!
+
+## Getting Setup
+
+To get started let's clone [this base project](https://github.com/tzmanics/base-project_final) that will set up some styling and base navigation.
+
+```bash
+git clone https://github.com/tzmanics/base-project_final
 ```
 
-You’ll be prompted for your project name, as well as a starting template. Go ahead and pick the “Default starter app” for this one.
+With the cloned project we'll want to install dependencies,
 
-Now, navigate inside your project, and add a `siteconfig.json` at the top level. Fill it in with a title and description, here’s what mine looks like:
+```bash
+npm i
+```
 
-```json
-{
-  "title": "Demo Blog",
-  "description": "This is a simple blog built with Next, easily deployable to Netlify!"
+set the remote to your own Git repository, and push an initial commit setting the upstream.
+
+```bash
+git remote rm origin
+git remote add origin <the link to your repo>
+git push --set-upstream origin master
+```
+
+To take advantage of [Netlify's git-integrated CI/CD](https://www.netlify.com/products/#main?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex) you can also connect your project to your Netlify account using the [Netlify CLI](https://docs.netlify.com/cli/get-started/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex). Here are all the magical commands for all these steps:
+
+```bash
+netlify init
+```
+
+Bingo, bango, done-zo! We're ready to start adding content.
+
+> There's also a little walkthru on [getting started with Angular and Netlify](https://www.netlify.com/blog/2019/09/23/first-steps-using-netlify-angular/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex) if that piques your interest.
+
+## Adding Content
+
+The first thing we'll do is fill the page with some content. There are many ways to optimize images and serve them up. For our example, we'll just squoosh & store. Feel free to use your own images. For this example I'll be using images from [Upsplash](https://unsplash.com/) that I cropped to squares for uniformity. The number of pictures you choose to use is completely optional but four pictures will fit the project best.
+
+### Squoosh & Save
+
+Next, let's create an account with Cloudinary. To do this, we'll navigate to [this link](https://cloudinary.com/users/register/free) and follow the generic signup flow. With an account created, let's focus on putting those images on Cloudinary. Before we do this, let's make sure our images are optimized for the web. To do this, we'll be using [Squoosh](https://squoosh.app/).
+
+1. download and crop locally
+2. open up https://squoosh.app/editor and drag the picture into the editor, resize to a reasonable size (images for this project are 300x300), then hit the download icon (this app automatically compresses the images but you can change the settings for that too)
+3. I then open Cloudinary in another (or the same) tab and, since the image is in the bottom shelf of the browser window, I just drag it up into my Cloudinary media library
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Kh5MLcbnZLQ" frameborder="0"; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe>
+
+Now you can either save those links in a document or you can keep you Cloudinary tab open for future reference.
+
+### Component Content
+
+Now we're going to start filling up our home page template. First let's go ahead and serve up the project and keep it open in a browser window so we can watch the magic happen. Run the `serve` command and append it with the `--open` flag to automatically open a window to localhost:4200](http://localhost:4200/).
+
+```bash
+ng serve --open
+```
+
+We should see a site that has a navigation bar up top with a few links. The background picture is taken at Flims, Switzerland. A beautiful place I was fortunate enough to visit thanks to Front Conf. I highly recommend it!
+
+Inside of `src/app/home/home.component.html` we'll add a few `div`s and some text to start.
+
+```html
+<div class="app-home">
+  <h1 class="motto">The Fastest Angular on the Web</h1>
+  <div class="home-words">
+    <p>
+      Fast and secure sites and apps delivered by pre-rendering files and
+      serving them directly from a CDN, removing the requirement to manage or
+      run web servers.
+    </p>
+  </div>
+</div>
+```
+
+Next, we'll start adding cards to hold and order the content that's going in. After the top content we'll make a `div` for the cards called `home-box` (I know, such creative). Inside of that `div` we'll create a `div` for each card under class `home-card`.
+
+```html
+...
+
+<div class="home-box">
+  <div class="home-card">
+    <h1 class="home-card-header">Fast</h1>
+    <img
+      class="home-card-image"
+      src="https://res.cloudinary.com/dzkoxrsdj/image/upload/v1585107167/cara-fuller-34OTzkN-nuc-unsplash_1_anhvwp.jpg"
+      alt="running cheetah"
+    />
+    <p class="home-card-content">
+      <b>Faster websites.</b>
+      Optimize your site with pre-rendering and global delivery.
+    </p>
+  </div>
+</div>
+```
+
+As you can see, each card has a
+
+- `h1` header, `home-card-header`
+- `img` that uses the Cloudinary link as its `src`
+- and a short blurb, class `home-card-content`
+
+This card is repeated four times more with different content. You can see [the full file here](https://jamgular.netlify.com/).
+
+> 🐙 tip: I like to commit and commit often. After adding all the content to the template, it would be a great time to add and commit your code.
+
+### Serving Styles on Styles
+
+Now to make sure things line up we're going to flex on this file 💪. There's a lot going on in the file so I'll walk through each block then link the full file at the end.
+
+In `src/app/home.component.scss`, we'll start with styling the little blurb under the header, a.k.a. `.home-words`. For better legibility we'll make the background a semi-transparent white and bump up the font size to 25px. We use a margin at `0 auto` to center, then add padding to pull the text away from the edges of the box. Finally, we'll center `p` and remove its margins.
+
+```css
+.home-words {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 25px;
+  margin: 0 auto;
+  padding: 10px 10%;
+  p {
+    margin: 0;
+    text-align: center;
+  }
 }
 ```
 
-Luckily Next doesn't add too much bloat to their starter, and the only directory that exists at first is a simple `pages/` and `public/` directory. Go ahead and set up your folder structure so it looks like this:
+Next up, `.home-box`. [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) is a wonderful css value to help us line things up and make it responsive. We set `display` to `flex`, set `flex-wrap` to `wrap`, and use `justify-content: space between` to make the cards flow well. Everything else in here is pretty self-explanatory.
 
-```
-components/
-pages/
-  post/
-posts/
-public/
-  static/
-```
-
-This is how it should look in your editor all together:
-
-![Next.js blog project folder structure example](https://cdn.netlify.com/34cb692e1d3233a2f380b059ad0f71cd7d1784da/975d9/img/blog/screen-shot-2020-05-04-at-9.40.57-am.png)
-
-## Let’s code!
-
-Now that we have everything set up, go and replace everything in your `index.js` with this:
-
-```jsx
-const Index = ({ title, description, ...props }) => {
-  return <div>Hello, world!</div>;
-};
-
-export default Index;
-
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`);
-
-  return {
-    props: {
-      title: configData.default.title,
-      description: configData.default.description,
-    },
-  };
+```css
+.home-box {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 150px auto;
+  padding: 0;
+  width: 90%;
+  p {
+    margin-top: 20px;
+  }
 }
 ```
 
-If you’d like, at this point you can stick your own custom favicon in the `public` folder and replace the one that came with the code. I have a little Netlify logo as one, so I’ll use that. If you're not sure how to do this, I personally use this [Favicon & App Icon Generator](https://www.favicon-generator.org/) site.
+The last two settings are just to space out the cards, set the header text and make the images fit in the cards well.
 
-In your terminal, run `npm run dev`, and voila! You have a Next app up and running!
+```css
+.home-card {
+  max-width: 285px;
+  margin: 0 auto;
+  h1 {
+    font-size: 25px;
+    text-align: left;
+  }
+}
 
-![Hello, World Next.js site on localhost, in the browser](https://cdn.netlify.com/9ef8dff964256371a83aac9e10b7d8263497de72/5818d/img/blog/18c61719-61ca-4746-b671-9ee7a9c62537.png)
-
-Chances are if you know React, this `index.js` file isn’t too surprising. I’d like to explain that `getStaticProps` function for you, though. It was released in Next 9.3. That function lets you fetch data, and return it as props to the page component. You can use `getStaticProps` to fetch local data (as you can see here, fetching from the `siteconfig.json` file), or external APIs and libraries. This function will only work on page components in the `pages` directory! The page will be rendered at build time, and you can pass that data to its child components. Let’s implement some of those child components now, so you can see it work in action.
-
-## Components!
-
-Now, we want to get some real routing and components showing up here. Let’s start with components, and make three JS files inside our `components` folder, called `Header.js`, `Layout.js`, and `PostList.js`.
-
-- The `Header.js` file will contain our site header and navigation.
-- The `PostList.js` file will, as you can guess, list our blog posts.
-- The `Layout.js` file is the juicy one. It’s going to pull in our Header, populate the `<head>` HTML tag, contain all content that the site holds, and throw a footer in there as well.
-
-Let’s implement `Layout.js` first, and get it on our homepage. Open up `Layout.js` and put this in there:
-
-```jsx
-import Head from "next/head";
-import Header from "./Header";
-
-export default function Layout({ children, pageTitle, ...props }) {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{pageTitle}</title>
-      </Head>
-      <section className="layout">
-        <div className="content">{children}</div>
-      </section>
-      <footer>Built by me!</footer>
-    </>
-  );
+img {
+  margin: 0 !important;
+  width: 100%;
 }
 ```
 
-Notice the `Head` component from `next/head` here. In Next, whenever you want to include tags in the `<head>` of your rendered HTML page, you use this element! I only included one `<meta>` tag and the `<title>` in this example, but you can populate it to your heart’s content.
-
-The rest of the file is just rendering some basic blocks for our layout. Now, let’s head over to `index.js` and replace our “hello world” `<div>` with this:
-
-```diff-jsx
-
-const Index = ({ title, description, ...props }) => {
-+  return (
-+    <Layout pageTitle={title}>
-+      <h1 className="title">Welcome to my blog!</h1>
-+      <p className="description">
-+        {description}
-+      </p>
-+      <main>
-+        Posts go here!
-+      </main>
-+    </Layout>)
-}
-```
-
-And make sure to import the `Layout` component at the top of index.js as well:
-
-```jsx
-import Layout from "../components/Layout";
-```
-
-Alright, let’s check out our site in the browser!
-
-![Next.js blog page shown locally with our title, description, and footer.](https://cdn.netlify.com/484497b736c86602027502624b5536b0dcc885c6/6879d/img/blog/ef26f382-dcc1-4f8b-bb10-8418b7f55e8e.png)
-
-Not too shabby! Notice how the description in the paragraph there and the title on the browser tab comes from our `getStaticProps`. We’re using real data!
-
-Let’s add in a `Header` component now. Open up `Header.js` and add this in there:
-
-```jsx
-import Link from "next/link";
-
-export default function Header() {
-  return (
-    <>
-      <header className="header">
-        <nav className="nav">
-          <Link href="/">
-            <a>My Blog</a>
-          </Link>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </nav>
-      </header>
-    </>
-  );
-}
-```
-
-Alright, let’s take this apart a bit. Notice the usage of the `Link` tag. Client-side transitions between your routes are enabled with this. There’s a pretty nice API built in there (check it out [here](https://nextjs.org/docs/api-reference/next/link)), but the 2 things that you need to know for this example is that `href` is the only required prop (and it points to a path from inside the `pages` directory, and you have to put an `<a>` component in there to build the links properly for your site’s SEO.
-
-Okie dokie, now that we’ve made this component, let’s pull it into our `Layout` component. Plop a `<Header />` tag right at the top of the `<section>` tag we have in there. We already imported the `Header` component earlier, so that should be all you need to do to make it load!
-
-```diff-jsx
-export default function Layout({ children, pageTitle, ...props }) {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{pageTitle}</title>
-      </Head>
-      <section className="layout">
-+        <Header />
-        <div className="content">{children}</div>
-      </section>
-      <footer>Built by me!</footer>
-    </>
-  )
-}
-```
-
-Let’s check it out in the browser.
-
-![Next.js blog showing navigation links on top of the existing blog](https://cdn.netlify.com/d51312c64bb8529ebf51bb39f8a36d3b9161e297/5c2b8/img/blog/1ed1c077-5d1f-4c43-8313-27ee2713f5e8.png)
-
-Oh heck. We have navigation, people! You might notice though that if you click on that About link, we get a 404. We should fix that.
-
-### Adding more page components
-
-Okay, so now that we have navigation going, we’re going to need to be able to have things to navigate to (especially once we have posts going).
-
-Create an `about.js` file in the `pages` folder, and fill it with something like this:
-
-```jsx
-import Layout from "../components/Layout";
-
-const About = ({ title, description, ...props }) => {
-  return (
-    <>
-      <Layout pageTitle={`${title} | About`} description={description}>
-        <h1 className="title">Welcome to my blog!</h1>
-
-        <p className="description">{description}</p>
-
-        <p>
-          I am a very exciting person. I know this because I'm following a very
-          exciting tutorial, and a not-exciting person wouldn't do that.
-        </p>
-      </Layout>
-    </>
-  );
-};
-
-export default About;
-
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`);
-
-  return {
-    props: {
-      title: configData.default.title,
-      description: configData.default.description,
-    },
-  };
-}
-```
-
-This looks a lot like our `index.js` file, and that’s cool for now. You can populate it with whatever, and you can even add more files in here if you want. But, for now, let’s just go back to our browser and click on the About link in the navigation.
-
-![Next.js site About page with the given content in it](https://cdn.netlify.com/5a66b3a81e0ca2f17a76bd66003fe639c4ab305c/c4467/img/blog/52f69c0a-d515-45c2-8248-49e1bfe1dfcf.png)
-
-Oh me oh my, we have pages! Are you thrilled? I’m thrilled. Let’s get more thrilled and talk about **dynamic routes**.
-
-## Dynamic Routes
-
-So, right now, when you want to navigate between pages, we know that we just have to make a file for it, and the route exists. If we made an `ilovenetlify.js` file in the `pages` directory, we could go to `localhost:3000/ilovenetlify` and it would just work. But what about when we have blog posts that have dynamic titles, and we want to name our routes after those titles? Well, don’t fret, Next has a solution for you.
-
-Go ahead and make a file in `pages/post` called `[postname].js`, Oh gee, there’s square brackets in the file name! That’s how Next knows that you have a dynamic route. The file path `pages/post/[postname].js` will end up being `localhost:3000/post/:postname` in the browser! That’s right, we have both a nested route, and a dynamic route here. Someone call the web development police, we’re onto something!
-
-## Processing Markdown
-
-Before we populate `[postname].js`, we have to install a few other things into our project.
-
-```shell
-npm install react-markdown gray-matter raw-loader
-```
-
-- React Markdown is a library that will parse and render Markdown files.
-- Gray Matter will parse the YAML “front matter” of our blog posts (the parts of our Markdown posts with the metadata we’ll need).
-- Raw Loader is a loader that will allow us to import our Markdown files with webpack.
-
-Now, make a `next.config.js` file at the top level, and populate it with this:
-
-```javascript
-module.exports = {
-  target: "serverless",
-  webpack: function (config) {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: "raw-loader",
-    });
-    return config;
-  },
-};
-```
-
-**Note:** You will probably have to restart your dev server after adding this file!
-
-Still with me? Now that we have these libraries set up, we can actually set up our `[postname].js` to use it all. Stick this in the file:
-
-```jsx
-import Link from "next/link";
-import matter from "gray-matter";
-import ReactMarkdown from "react-markdown";
-
-import Layout from "../../components/Layout";
-
-export default function BlogPost({ siteTitle, frontmatter, markdownBody }) {
-  if (!frontmatter) return <></>;
-
-  return (
-    <Layout pageTitle={`${siteTitle} | ${frontmatter.title}`}>
-      <Link href="/">
-        <a>Back to post list</a>
-      </Link>
-      <article>
-        <h1>{frontmatter.title}</h1>
-        <p>By {frontmatter.author}</p>
-        <div>
-          <ReactMarkdown source={markdownBody} />
-        </div>
-      </article>
-    </Layout>
-  );
-}
-
-export async function getStaticProps({ ...ctx }) {
-  const { postname } = ctx.params;
-
-  const content = await import(`../../posts/${postname}.md`);
-  const config = await import(`../../siteconfig.json`);
-  const data = matter(content.default);
-
-  return {
-    props: {
-      siteTitle: config.title,
-      frontmatter: data.data,
-      markdownBody: data.content,
-    },
-  };
-}
-
-export async function getStaticPaths() {
-  const blogSlugs = ((context) => {
-    const keys = context.keys();
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-
-      return slug;
-    });
-    return data;
-  })(require.context("../../posts", true, /\.md$/));
-
-  const paths = blogSlugs.map((slug) => `/post/${slug}`);
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-```
-
-Whew, this is a long one, so let’s break it down.
-
-- In `getStaticProps`, we pull in the Markdown files that are in the `posts` directory. We also get our `siteconfig.json` again, to get the site’s title for the browser tab. We use Gray Matter to parse the front matter in our blog posts. We then return all of this to be props for the component.
-- We also have a `getStaticPaths`, which was also new in Next 9.3. This function defines a list of paths that have to be rendered to HTML at build time. So, what we do here is take in all of our Markdown files in the `posts` directory, parse out the file names, define a list of slugs based on each file name, and return them. We also return a `fallback` which is false, so that 404 pages appear if something’s not matching properly.
-- In the `BlogPost` component itself, we use the values given to us in `getStaticProps` to populate a `Layout` component with our blog post content.
-
-Alrighty! We have done a lot of work without seeing a lot of results yet. Let’s change that. Make a `mypost.md` file in the `posts/` directory at the top level, and populate it with something that looks like this:
-
-```markdown
----
-title: "Hello, world!"
-author: "Cassidy"
----
-
-Humblebrag sartorial man braid ad vice, wolf ramps in cronut proident cold-pressed occupy organic normcore. Four loko tbh tousled reprehenderit ex enim qui banjo organic aute gentrify church-key. Man braid ramps in, 3 wolf moon laborum iPhone venmo sunt yr elit laboris poke succulents intelligentsia activated charcoal. Gentrify messenger bag hot chicken brooklyn. Seitan four loko art party, ut 8-bit live-edge heirloom. Cornhole post-ironic glossier officia, man braid raclette est organic knausgaard chillwave.
-
-- Look at me
-- I am in a list
-- Woo hoo
-```
-
-I used [Hipster Ipsum](https://hipsum.co/) for this, but you can fill it with whatever. In the front matter at the top, we only have a title and author because that’s all we use in our `BlogPost` component. You can add whatever you want in here (like a date, for example), as long as you use it in the component.
-
-We’ve done it! Navigate to `localhost:3000/post/mypost` and witness all of your hard work!
-
-![Next.js blog on localhost showing contents of the blog post markdown rendered to the page.](https://cdn.netlify.com/2d44be433dc9ec980ea2f836b83f9990fabb5bbc/a02cd/img/blog/a7f9014b-ee43-40f1-94b7-63872679e796.png)
-
-## Listing our posts
-
-Now that we are able to make Markdown blog posts with dynamic routes, we should try to list all of the blog posts that we make on our blog’s homepage. Good thing we already made `PostList.js` earlier in our `components/` directory! Write this code into that file:
-
-```jsx
-import Link from "next/link";
-
-export default function PostList({ posts }) {
-  if (posts === "undefined") return null;
-
-  return (
-    <div>
-      {!posts && <div>No posts!</div>}
-      <ul>
-        {posts &&
-          posts.map((post) => {
-            return (
-              <li key={post.slug}>
-                <Link href={{ pathname: `/post/${post.slug}` }}>
-                  <a>{post.frontmatter.title}</a>
-                </Link>
-              </li>
-            );
-          })}
-      </ul>
-    </div>
-  );
-}
-```
-
-Now, notice how we want to use post data that’s passed in as a prop. We’ll have to do this from `index.js`. Head back over there, and put `<PostList />` in the `<main>` tag, and import it at the top like so:
-
-```diff-jsx
-+ import PostList from '../components/PostList'
-
-const Index = ({ posts, title, description, ...props }) => {
-  return (
-    <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
-      <p className="description">{description}</p>
-      <main>
-+        <PostList />
-      </main>
-    </Layout>
-  )
-}
-```
-
-What do we do when we want to get external data, say for example, our post data? We use `getStaticProps`! Scroll down there and modify the function to look like this:
-
-```javascript
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`);
-
-  const posts = ((context) => {
-    const keys = context.keys();
-    const values = keys.map(context);
-
-    const data = keys.map((key, index) => {
-      let slug = key.replace(/^.*[\\\/]/, "").slice(0, -3);
-      const value = values[index];
-      const document = matter(value.default);
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      };
-    });
-    return data;
-  })(require.context("../posts", true, /\.md$/));
-
-  return {
-    props: {
-      posts,
-      title: configData.default.title,
-      description: configData.default.description,
-    },
-  };
-}
-```
-
-We added a `posts` variable in here that pulls in the Markdown files, parses them (like we did before), and then passes that `posts` variable into the props for `Index`. Now the rest of your `index.js` file should look like this:
-
-```jsx
-import matter from "gray-matter";
-
-import Layout from "../components/Layout";
-import PostList from "../components/PostList";
-
-const Index = ({ posts, title, description, ...props }) => {
-  return (
-    <Layout pageTitle={title}>
-      <h1 className="title">Welcome to my blog!</h1>
-      <p className="description">{description}</p>
-      <main>
-        <PostList posts={posts} />
-      </main>
-    </Layout>
-  );
-};
-
-export default Index;
-```
-
-We imported `matter` to parse the front matter, we passed in `posts` as a prop, and then drilled that down into `PostList` so that we can get a list of real posts. Let’s look at our browser!
-
-![Next.js project showing list of blog posts on our homepage](https://cdn.netlify.com/25f99969a62497b8632467642e3ab69d481b06ac/12bfc/img/blog/82a98c83-ca79-47d6-bde9-7e6bc6b806da.png)
-
-Hooray!! We have a post list!! Now, whenever we add a Markdown file to our `posts` directory, it will appear here in the listing.
-
-## Optional customization
-
-I won’t get into styling right now, but if you’d like to see the [final demo](https://github.com/cassidoo/next-netlify-blog-starter) with it built in, go ahead! Next 9.4 supports styled-jsx, Sass, CSS Modules, and more out of the box, so you can use whatever you prefer.
-
-In Next 9.4, they released the ability to add absolute imports to your code (I talk more about that in [this blog post](https://url.netlify.com/rJpH3US28)). If you'd like to clean up your imports (nobody likes writing all of that `../../etc`), you can add a `jsconfig.json` to the top level of your project that looks like this:
-
-```json
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@components/*": ["components/*"],
-      "@utils/*": ["utils/*"]
+Finally, we have a section to set the widths, margins, and font-sizes for mobile devices or display widths no larger than 480px.
+
+```css
+@media (max-device-width: 480px) {
+  .app-home {
+    min-width: 0;
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  .home-box {
+    margin: 0 auto;
+    width: 95%;
+  }
+
+  .home-words {
+    font-size: 20px;
+    padding: 0;
+  }
+
+  .home-card {
+    font-size: 20px;
+    width: 100%;
+    h1 {
+      font-size: 25px;
     }
   }
 }
 ```
 
-Now with this, whenever you want to access your components, you can type `@components/something` instead of `../../components/something`. Check out the demo project to see it in action!
+That's it for styling! You can see the whole file [here](https://github.com/tzmanics/prerendered-home-page/blob/master/src/app/home/home.component.scss). If you take a look at what we have being server on [localhost:4200](http://localhost:4200/) you should have a responsive layout of cards with titles, images, and blurbs.
 
-## Deploying to Netlify
+![screenshot of app home page](https://cdn.netlify.com/1a077d568405420c13e2945934cbe1d36175e62b/7bee5/img/blog/screenshot-of-app-home-page.jpg)
 
-We have been on QUITE the journey, folks. Let’s get our blog online for the world to see. Make a file at the top level of your directory called `netlify.toml`, and fill it with this:
+Want to see it live? Just commit and push your code to your repository. This will trigger a Netlify build and you can run Netlify's open command to see the build in your project dashboard.
 
-```yaml
-[build]
-  command = "npm run build && npm run export"
-  publish = "out"
+```bash
+git add .
+git commit -m 'adds amazing content'
+git push
+
+netlify open
 ```
 
-The `command` here is referring to the "Build Command" that Netlify will use to build and bundle up your final site. The `publish` is referring to the directory in which the build will be located after bundling! Next.js always exports to the `out` directory unless you configure it otherwise.
+## Introducing Scully
 
-Then, open up your `package.json` and add this to the `scripts` underneath `"start"`:
+Now that we have all the content where we want it and how we want it on our home page let's pre-render it! We'll add Scully to our project then run it to find and pre-rendering all the pages. After that we'll just need to change our build command in out [`netlify.toml`](https://docs.netlify.com/configure-builds/file-based-configuration/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex) file to make sure we deploy the new static content.
+
+### Adding Scully
+
+We can use the `ng add` command to integrate Scully into our project.
+
+```bash
+ng add @scullyio/init
+```
+
+As you can see from the output, the Scully schematics updated a few files (`app.module.ts`, `polyfills.ts`, and `package.json`) and created a `scully.base-project.config.js` file. Since this project is a clone of the [our base project](https://github.com/tzmanics/base-project_final) it has taken the name information from the `angular.json` file to set this file name.
+
+![screenshot of scully output](https://cdn.netlify.com/3f39dc2a40e07b1a8b9815b2d1af0ecacf96ebaf/affb8/img/blog/screenshot-of-scully-output.jpg)
+
+We want to make sure we run the build command `ng build (or ng build --prod)` before we run Scully with `npm run scully`. Scully traverses the project to get information on the routes and pre-renders the content, so we build the project to have the most up-to-date version ready for Scully. Instead of having to run these commands each time we can make two scripts, `jam` and `jam-prod` in the `package.json` file.
 
 ```json
-"export": "next export"
+{
+  "name": "base-project",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "scully": "scully",
+    "scully:serve": "scully serve",
+    "jam": "ng build && npm run scully",
+    "jam-prod": "ng build --prod && npm run scully -- --nw"
+  },
+  ...
 ```
 
-Amazingly, this is all you need to get your project set up for Netlify! Push your code to a repository on your favorite platform.
+To make local checks easier the `jam` script can be run with `npm run jam`. That will build out the project, run Scully, and also open up a local server to check the output at [localhost:1668](http://localhost:1668/). We can see the stats from running Scully including how many routes it created and how long it took.
 
-Now, log in to Netlify, and click “New site from Git” and follow the prompts to select your repo. Because you have your `netlify.toml` file already made, the build settings should already be filled out for you:
+![screenshot of output from running scully](https://cdn.netlify.com/d07e059d4ae93596daf262d7159ef8c2e063b4cc/bd9c6/img/blog/screenshot-of-output-from-running-scully.jpg)
 
-!["Create a new site" on Netlify](https://cdn.netlify.com/ee37318ca78895f6748b3757026cdd6e2cc840de/38d20/img/blog/10e549df-2c88-4762-9a9f-ba7c3e560914.png)
+The script we made for the production build is a little different. First off we append the `--prod` flag to `ng build` to set the build configuration to production target. Then we pass two different flags to Scully. The first `--` is there to let npm know you're are about to pass parameters and the second `--nw` is to turn Scully's `watch` feature off. This is the feature that is turned on by default and starts up the local server (at `localhost:1668`). We don't want that in our production build on Netlify because it will make it so the build never completes.
 
-Click that shiny “Deploy site” button, and within a few moments your site is live!! You did it!! And, whenever you make changes to your project and push them to your GitHub repo, your site will rebuild automatically. How cool is that??
+### Reconfiguration
 
-Once again, if you want to see the final version I put together (with styles included), you can [check it out here](https://github.com/cassidoo/next-netlify-blog-starter), or deploy it directly with a single click!
+We have a new build command but we also have a new directory where Scully builds out the static version of our site, `dist/static`. In order to tell Netlify to build out the site with Scully _and_ to serve the newly made pre-rendered content we need to change out `netlify.toml` configuration file.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/cassidoo/next-netlify-blog-starter&utm_source=github&utm_medium=blogstarter-cs&utm_campaign=devex)
+```toml
+[build]
+  publish = "dist/static"          // <-- new project directory
+  command = "npm run jam-prod"     // <-- new build command
+[[redirects]]
+  from="/*"
+  to="/index.html"
+  status=200
+```
 
-## You did it!
+We can simplify the command by just passing that nifty production script we made, `npm run jam-prod`. If you connected to your Netlify project in the beginning with `netlify init` you will still be hooked into your Netlify project. So, if you commit your code and push it up to GitHub, it will trigger a Netlify build using this new build information. If you run the command `netlify open` in your terminal you can check out the new build in your Netlify dashboard.
 
-Congratulations. It was a long journey, but you’ve made a Next 9.4-powered, Markdown blog, complete with dynamic routing and the latest and greatest functions in Next to build an optimized static site. And, of course, you deployed it to Netlify, and it’ll keep updating as long as you keep updating it.
+If it all worked correctly, you should be able to go to your site at `<project-name>.netlify.com` and see that absolutely nothing has changed. That means we didn't break anything, woo hoo! You can even go into the developer tools and [disable JavaScript](https://developers.google.com/web/tools/chrome-devtools/javascript/disable) to see that since you're serving the pre-rendered content everything still works.
 
-I’m proud of you, and I hope you learned something today! If you ever have questions, head over to our [Community](https://community.netlify.com/) and we’ll get you sorted!
+> Want to learn more about Scully? Here are two posts for your viewing pleasure, [Building an Angular Jamstack App with Scully](https://www.netlify.com/blog/2019/12/17/building-an-angular-jamstack-app-with-scully/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex) and [Update on Scully: Angular's Static Site Generator](https://www.netlify.com/blog/2020/02/24/update-on-scully-angulars-static-site-generator/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex)
+
+## Would Ya Look At That
+
+Congratulations! You've just created a totally pre-rendered static site with Angular! You can see the complete finished product in [this repo](https://github.com/tzmanics/workshop-angular-in-the-jamstack/tree/master/prerendered-home-page/prerendered-home-page). We were able to compress our image assets and deliver them using a cloud-base image service. Then we used, Scully, the Angular SSG, to pre-render our whole site. Go us!
+
+## Resources for the Road
+
+Check out these resources to learn more!
+
+- [Pre-rendering Explained](https://www.netlify.com/blog/2016/11/22/prerendering-explained/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex)
+- [Scully's Website](http://scullyio.com/)
+- [Building an Angular Jamstack App with Scully](https://www.netlify.com/blog/2019/12/17/building-an-angular-jamstack-app-with-scully/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex)
+- [First Steps Using Netlify and Angular](https://www.netlify.com/blog/2019/09/23/first-steps-using-netlify-angular/?utm_source=blog&utm_medium=pre-render_tzm&utm_campaign=devex)

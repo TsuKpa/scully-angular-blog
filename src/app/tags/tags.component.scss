@@ -1,0 +1,56 @@
+.main {
+    grid-area: main;
+    border-style: solid;
+    border-color: azure;
+    border-width: 1px;
+    padding: 0.5rem;
+    margin: 2rem 0;
+    box-shadow: chocolate;
+    min-height: 80vh;
+    box-shadow: 1px 1px 5px 1px #e0e8e8;
+    border-radius: .25rem;
+}
+
+.container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". main ."
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        grid-template-columns: 2% 96% 2%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .container {
+        grid-template-columns: 5% 90% 5%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container {
+        grid-template-columns: 10% 80% 10%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        grid-template-columns: 15% 70% 15%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .container {
+        grid-template-columns: 20% 60% 20%;
+    }
+}
