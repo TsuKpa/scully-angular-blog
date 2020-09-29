@@ -1,20 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'app-post-item',
     templateUrl: './post-item.component.html',
     styleUrls: ['./post-item.component.scss']
 })
-export class PostItemComponent implements OnInit {
+export class PostItemComponent {
 
     @Input() blog: BlogData;
 
-    constructor() { }
-
-    ngOnInit(): void {
-        console.log(this.blog);
-    }
-
+    constructor(
+    ) { }
 }
 
 
@@ -22,7 +18,7 @@ interface BlogData {
     route: string;
     title: string;
     description: string;
-    authors: string[];
+    authors: string;
     published: boolean;
     topics: string[];
     tags: string[];

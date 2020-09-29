@@ -1,28 +1,88 @@
 h1 {
-  color: rgb(51, 6, 37);
-  font-family: "Yeseva One", cursive;
-  padding: 5px;
-  border-radius: 5px;
-  width: fit-content;
+    color: rgb(51, 6, 37);
+    font-family: "Yeseva One", cursive;
+    padding: 5px;
+    border-radius: 5px;
+    width: fit-content;
 }
 
+.container-blog {
+    max-width: 98vw !important;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: auto;
+    grid-template-areas:
+        ". main ."
+}
 
 .blog-post {
-  background-color: rgba(255, 255, 255, 0.8);
-  margin: 0 auto;
-  max-width: 900px;
-  width: 80%;
-  padding: 30px;
-}
+    grid-area: main;
+    background-color: rgba(255, 255, 255, 0.8);
 
-.blog-post img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-  width: 90%;
+    code {
+        color: #d69e2e;
+        border-radius: .25rem;
+        font-weight: 200;
+        overflow-wrap: break-word;
+        padding: .1rem .25rem;
+    }
+
+    blockquote {
+        color: #718096;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: .25rem .5rem;
+        border-left: 4px;
+        border-style: solid;
+        border-color: #4a5568;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        max-height: 480px;
+        object-fit: cover;
+    }
 }
 
 .blog-post li {
-  list-style-type: disc;
+    list-style-type: disc;
+}
+
+
+/* Extra small devices (phones, 640px and down) */
+@media only screen and (max-width: 640px) {
+    .container-blog {
+        grid-template-columns: 2% 96% 2%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 640px and up) */
+@media only screen and (min-width: 640px) {
+    .container-blog {
+        grid-template-columns: 5% 90% 5%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .container-blog {
+        grid-template-columns: 10% 80% 10%;
+    }
+}
+
+/* Large devices (laptops/desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .container-blog {
+        grid-template-columns: 15% 70% 15%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1280px and up) */
+@media only screen and (min-width: 1280px) {
+    .container-blog {
+        grid-template-columns: 20% 60% 20%;
+    }
 }

@@ -1,8 +1,10 @@
 ---
 title: The Test Post
 description: blog description
-authors:
-  - TsuKpa
+author: "TsuKpa"
+keywords:
+  - blog
+  - test
 published: true
 topics:
   - tutorials
