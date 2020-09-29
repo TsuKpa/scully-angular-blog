@@ -1,0 +1,106 @@
+.container-body {
+    min-height: 81.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        width: 600px;
+        height: 365px;
+        border-style: solid;
+        border-color: azure;
+        border-width: 1px;
+        padding: 0.5rem;
+        margin: 2rem 0;
+        box-shadow: 1px 1px 5px 1px #e0e8e8;
+        border-radius: .25rem;
+
+        .item {
+            display: flex;
+            height: 13rem;
+            width: 100%;
+            margin: 2rem 0 0 0;
+            padding: 0 2rem;
+
+            .avatar {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin-top: 1rem;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .info {
+                text-align: left;
+                margin-left: 2rem;
+                line-height: 1.5rem;
+
+                .name {
+                    margin-bottom: 1rem;
+                }
+
+                .job {
+                    font-weight: 700;
+                    color: #008891;
+                }
+
+                .description {
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 6rem;
+        }
+    }
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100% !important;
+        font-size: 0.8rem;
+        margin: 0 1rem !important;
+        height: 415px !important;
+
+        .item {
+            margin: 0 !important;
+            display: block !important;
+            text-align: center;
+            height: 19rem !important;
+
+            .name {
+                margin: 0;
+            }
+
+            .description {
+                margin-top: -0.5rem;
+            }
+
+            .avatar {
+                margin: 0 !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .info {
+                margin-left: 0 !important;
+                text-align: center !important;
+                display: block !important;
+            }
+        }
+
+        .link {
+            font-size: 1.5rem !important;
+            margin: 0 3rem !important;
+        }
+    }
+}
