@@ -10,8 +10,6 @@ topics:
   - tutorials
 tags:
   - angular
-  - javascript
-  - html
 tweet: ""
 createdDate: "25 Sep, 2020"
 format: blog

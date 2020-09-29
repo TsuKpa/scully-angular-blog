@@ -83,3 +83,32 @@
     }
 
 }
+
+
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    opacity: 0.0.1;
+    background-color: linear-gradient(260deg, #2376ae 0%, #679b9b 100%);
+}
+
+.progress-container {
+    width: 100%;
+    height: 2px;
+    background: transparent;
+}
+
+.progress-bar {
+    height: 2px;
+    background: #51adcf;
+    width: 0%;
+}
+
+.content {
+    padding: 100px 0;
+    margin: 50px auto 0 auto;
+    width: 80%;
+}
