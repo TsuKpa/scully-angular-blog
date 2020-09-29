@@ -1,18 +1,23 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute, Router, ROUTES } from '@angular/router';
-
-declare var ng: any;
+import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { HighlightService } from './../highlight.service';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
-  preserveWhitespaces: true,
-  encapsulation: ViewEncapsulation.Emulated
+    selector: 'app-blog',
+    templateUrl: './blog.component.html',
+    styleUrls: ['./blog.component.scss'],
+    preserveWhitespaces: true,
 })
-export class BlogComponent implements OnInit {
-  ngOnInit() { }
+export class BlogComponent implements OnInit, AfterViewChecked {
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-  }
+    constructor(
+        private highlightService: HighlightService,
+    ) {
+    }
+
+    ngOnInit() {
+    }
+
+    ngAfterViewChecked() {
+        this.highlightService.highlightAll();
+    }
 }

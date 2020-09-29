@@ -1,11 +1,13 @@
 ---
 title: The Test Post
 description: blog description
-authors:
-  - TsuKpa
+author: "TsuKpa"
 published: true
 topics:
   - tutorials
+keywords:
+  - blog
+  - test
 tags:
   - angular
   - javascript
