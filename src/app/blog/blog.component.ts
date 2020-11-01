@@ -1,4 +1,5 @@
 import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { HighlightService } from './../highlight.service';
 
 @Component({
@@ -9,12 +10,14 @@ import { HighlightService } from './../highlight.service';
 })
 export class BlogComponent implements OnInit, AfterViewChecked {
 
+    isProd: boolean;
     constructor(
         private highlightService: HighlightService,
     ) {
     }
 
     ngOnInit() {
+        this.isProd = environment.production;
     }
 
     ngAfterViewChecked() {

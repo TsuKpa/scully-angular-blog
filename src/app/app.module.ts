@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { UtterancesDirective } from './utterances.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    UtterancesDirective
   ],
   imports: [
     BrowserModule,
