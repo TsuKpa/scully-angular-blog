@@ -1,6 +1,6 @@
 ---
 title: >
-  Add a Donation Button & Start Accepting Money On Jamstack Sites
+  Add a Donation Button & Start Accepting Money On Jamstack Sites - TsuKpa's Blog
 description: >
   Taking donations is a fast & powerful way to take in money on your website. Whether you’re a non-profit or an indie creator, get started with Stripe in minutes!
 
@@ -21,7 +21,7 @@ relatedposts:
   - Automate Order Fulfillment w/Stripe Webhooks & Netlify Functions
 seo:
   metatitle: >
-    How to: Donation Button to Start Accepting Money On Jamstack Sites
+    How to: Donation Button to Start Accepting Money On Jamstack Sites TsuKpa's Blog
   metadescription: >
     See how accepting donations is a fast &#x26; powerful way to make money on your website. Whether you’re a non-profit or an indie creator, learn how to get started with Stripe in minutes!
 publish: true
@@ -35,8 +35,8 @@ We recently teamed up again on _Learn With Jason_ to [build a Jamstack site with
 
 ## tl;dr
 
-- Demo: https://stripe-donations-lwj.netlify.app/
-- Source code: https://github.com/jlengstorf/stripe-donations
+- Demo: <https://stripe-donations-lwj.netlify.app/>
+- Source code: <https://github.com/jlengstorf/stripe-donations>
 - [Deploy your own copy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/jlengstorf/stripe-donations&utm_source=blog&utm_medium=stripe-donations-jl&utm_campaign=devex)
 
 ## Watch this tutorial in video format
@@ -47,7 +47,7 @@ If you prefer video, this tutorial is also available as [an egghead lesson](http
 
 To get started, we need to create a product on Stripe that represents the donation.
 
-1. Go to https://dashboard.stripe.com/products
+1. Go to <https://dashboard.stripe.com/products>
 2. Click "+ New"
 3. Leave "one-time purchase products" selected
 4. Add a descriptive name, such as "Donate \$5"

@@ -6,26 +6,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-
-    constructor() { }
+    isHide = true;
 
     ngOnInit(): void {
-        let mainNav = document.getElementById('main-nav');
-        let navbarToggle = document.getElementById('navbar-toggle');
-
-        navbarToggle.addEventListener('click', function () {
-
-            if (this.classList.contains('active')) {
-                mainNav.style.display = "none";
-                this.classList.remove('active');
-            }
-            else {
-                mainNav.style.display = "flex";
-                this.classList.add('active');
-
-            }
-        });
-
         // When the user scrolls the page, execute myFunction
         window.onscroll = function () { myFunction() };
 
@@ -37,4 +20,7 @@ export class NavigationComponent implements OnInit {
         }
     }
 
+    hideMainNav() {
+        this.isHide = !this.isHide;
+    }
 }
