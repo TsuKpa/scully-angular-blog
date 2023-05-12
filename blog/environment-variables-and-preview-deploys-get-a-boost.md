@@ -1,5 +1,5 @@
 ---
-title: Environment variables and preview deploys get a boost
+title: Environment variables and preview deploys get a boost - TsuKpa's Blog
 description: With our automatic preview deploys you get 3 ways to handle
   sensitive environment variables. Learn how we've improved them for even
   greater control.
@@ -19,7 +19,7 @@ relatedposts:
   - Introducing Deploy Previews in Netlify
   - Introducing Deploy Contexts in Netlify
 seo:
-  metatitle: See How We Improved Environment Variables and Deploy Previews
+  metatitle: See How We Improved Environment Variables and Deploy Previews - TsuKpa's Blog
   metadescription: Netlify's automated Deploy Previews give you 3 ways to handle
     sensitive environment variables. Learn how we've improved them for even
     greater control.

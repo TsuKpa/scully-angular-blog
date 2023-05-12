@@ -1,5 +1,5 @@
 ---
-title: Introducing Edge Handlers in Preview
+title: Introducing Edge Handlers in Preview - TsuKpa's Blog
 description: The recent collective return to static has challenged what is
   possible on edge infrastructure. We're incredibly excited to announce edge
   handlers in preview, a way to directly run code right from the CDN.
@@ -14,6 +14,11 @@ topics:
 tweet: ""
 format: blog
 canonical_url: https://www.netlify.com/blog/2020/05/27/introducing-edge-handlers-in-preview/
+seo:
+  metatitle: Introducing Edge Handlers in Preview - TsuKpa's Blog
+  metadescription: The recent collective return to static has challenged what is
+  possible on edge infrastructure. We're incredibly excited to announce edge
+  handlers in preview, a way to directly run code right from the CDN.
 publish: true
 ---
 

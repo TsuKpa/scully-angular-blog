@@ -1,10 +1,9 @@
 h1 {
     color: rgb(51, 6, 37);
-    font-family: "Yeseva One", cursive;
     padding: 5px;
     border-radius: 5px;
     width: fit-content;
-    line-height: 4rem;
+    line-height: 3rem;
 }
 
 .container-blog {
@@ -40,11 +39,13 @@ h1 {
         border-color: #4a5568;
     }
 
+    iframe {
+        width: 100%;
+    }
+
     img {
         display: block;
         width: 100%;
-        max-width: 480px;
-        max-height: 480px;
         object-fit: cover;
     }
 }

@@ -5,15 +5,15 @@
                 <div class="progress-bar" id="myBar"></div>
             </div>
         </div>
-        <span id="navbar-toggle">
+        <span id="navbar-toggle" (click)="hideMainNav()">
             <i class="fa fa-bars"></i>
         </span>
         <a routerLink="/" id="logo">tsukpa's blog</a>
-        <ul id="main-nav">
-            <li>
+        <ul id="main-nav" [ngStyle]="{ 'display': isHide ? 'none' : 'flex' }">
+            <li (click)="hideMainNav()">
                 <a routerLink="/" class="nav-links">Home</a>
             </li>
-            <li>
+            <li (click)="hideMainNav()">
                 <a routerLink="/about" class="nav-links">About Me</a>
             </li>
         </ul>
