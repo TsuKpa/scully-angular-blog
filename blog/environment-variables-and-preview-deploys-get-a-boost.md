@@ -1,5 +1,5 @@
 ---
-title: Environment variables and preview deploys get a boost - TsuKpa's Blog
+title: Environment variables and preview deploys get a boost
 description: With our automatic preview deploys you get 3 ways to handle
   sensitive environment variables. Learn how we've improved them for even
   greater control.

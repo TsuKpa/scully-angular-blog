@@ -22,9 +22,10 @@ export class TagsComponent {
         this.route.params.subscribe(params => {
             this.routes$ = this.scully.available$.pipe(
                 map((routes) => routes.filter((route) => {
-                    return route.route.includes('/tags/') && route.tags.indexOf(params.keyword) !== -1;
+                    return route.route.includes('/blog/') && route.tags.indexOf(params.keyword) !== -1;
                 })),
             )
         });
+        window.scroll({ top: 0, left: 0});
     }
 }

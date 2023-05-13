@@ -21,6 +21,18 @@ h1 {
     grid-area: main;
     background-color: rgba(255, 255, 255, 0.8);
 
+    a {
+        color: #337ab7;
+    }
+
+    a:hover {
+        color: #70b8f7;
+    }
+
+    p {
+        text-align: justify;
+    }
+
     code {
         color: #d69e2e;
         border-radius: .25rem;

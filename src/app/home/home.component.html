@@ -1,7 +1,7 @@
 <div class="container">
     <div class="main">
-        <ng-container *ngFor="let route of routes$ | async">
-            <app-post-item [blog]="route"></app-post-item>
+        <ng-container *ngFor="let route of (routes$ | async); let i = index">
+            <app-post-item [blog]="route" [class.bd-mb-none]="i===(routes$ | async)?.length - 1"></app-post-item>
         </ng-container>
     </div>
 </div>

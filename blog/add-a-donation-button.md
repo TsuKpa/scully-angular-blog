@@ -1,6 +1,6 @@
 ---
 title: >
-  Add a Donation Button & Start Accepting Money On Jamstack Sites - TsuKpa's Blog
+  Add a Donation Button & Start Accepting Money On Jamstack Sites
 description: >
   Taking donations is a fast & powerful way to take in money on your website. Whether you’re a non-profit or an indie creator, get started with Stripe in minutes!
 
