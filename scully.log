@@ -322,3 +322,21 @@ No configuration for route "[33m/tags/:keyword[39m" found. Skipping The router
      ... tly run code right from the CDN.
                                          ^
 
+ The router plugin "[33mcontentFolder[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 20, column 70:
+     ... tly run code right from the CDN.
+                                         ^
+
+ The router plugin "[33mcontentFolder[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 20, column 70:
+     ... tly run code right from the CDN.
+                                         ^
+
+ The router plugin "[33mcontentFolder[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitYAMLException: can not read a block mapping entry; a multiline key may not be an implicit key at line 20, column 70:
+     ... tly run code right from the CDN.
+                                         ^
+

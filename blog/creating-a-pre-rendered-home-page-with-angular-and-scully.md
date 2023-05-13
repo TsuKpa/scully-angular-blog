@@ -1,5 +1,5 @@
 ---
-title: Creating a Pre-rendered Home Page with Angular and Scully - TsuKpa's Blog
+title: Creating a Pre-rendered Home Page with Angular and Scully
 description: >-
   Ready to start to transition your Angular site to the Jamstack? Why not start
   with your homepage where you can pre-render your content using Scully and

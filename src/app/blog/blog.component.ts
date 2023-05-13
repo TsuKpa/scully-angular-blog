@@ -18,6 +18,10 @@ export class BlogComponent implements OnInit, AfterViewChecked {
 
     ngOnInit() {
         this.isProd = environment.production;
+        window.scroll({
+            top: 0,
+            left: 0
+        });
     }
 
     ngAfterViewChecked() {

@@ -4,8 +4,11 @@
     right: 15px;
     opacity: 0;
     transition: all .2s ease-in-out;
-    i {
-        font-size: 1.5rem;
+    button {
+        cursor: pointer;
+        i {
+            font-size: 1.5rem;
+        }
     }
 }
 
