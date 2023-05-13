@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 /* include CSS for prism toolbar */
 @import '~prismjs/plugins/toolbar/prism-toolbar.css';
@@ -13,7 +13,7 @@
 }
 
 html {
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: var(--lh);
 }
 

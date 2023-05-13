@@ -20,6 +20,7 @@ import 'prismjs/components/prism-vim.js';
 import 'prismjs/components/prism-yaml.js';
 
 
+import "./scully/plugins/key-word.plugin";
 export const config: ScullyConfig = {
   projectRoot: "./src",
   projectName: "scully-angular-blog",
@@ -31,6 +32,9 @@ export const config: ScullyConfig = {
         folder: "./blog"
       }
     },
+    '/tags/:keyword': {
+      type: 'keywords'
+    }
   }
 };
 setPluginConfig('md', { enableSyntaxHighlighting: true });
