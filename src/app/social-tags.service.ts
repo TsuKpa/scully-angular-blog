@@ -19,7 +19,7 @@ export class SocialTagsService {
     readonly tagDescription: string = 'A blog about programming and software development, writing about Angular, NodeJS, Javascript, Typescript, UI, UX';
     // readonly tagImage: string = 'assets/logo.png';
     readonly urlPrefix: string = 'https://tsukpa.netlify.app/';
-    readonly siteName: string = 'tsukpa-blog';
+    readonly siteName: string = 'tsukpa blog';
     // readonly userTwitter: string = '@tsukpa';
 
     setTitleAndTags() {
@@ -42,12 +42,12 @@ export class SocialTagsService {
                     // this.meta.updateTag({ name: 'twitter:creator', content: this.userTwitter });
                     // this.meta.updateTag({ name: 'twitter:site', content: this.userTwitter });
                     if (link?.title) {
-                        this.titleService.setTitle(link.title + ' | ' + link.author);
+                        this.titleService.setTitle(link.title + ' | ' + link.author || 'TsuKpa');
                         this.meta.updateTag({ name: 'description', content: link.description });
                         this.meta.updateTag({ name: 'image', content: this.urlPrefix + '/' + link.photo });
-                        this.meta.updateTag({ name: 'og:title', property: 'og:title', content: link.title });
+                        this.meta.updateTag({ name: 'og:title', property: 'og:title', content: link.title || 'TsuKpa Blog'});
                         this.meta.updateTag({ name: 'og:description', property: 'og:description', content: link.description });
-                        this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article' });
+                        this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article'});
                         // this.meta.updateTag({ name: 'article:section', property: 'article:section', content: (link.keywords as string[])[0] });
                         this.meta.updateTag({ name: 'og:image', content: this.urlPrefix + '/' + link.photo });
                         this.meta.updateTag({ name: 'twitter:title', content: link.title.substring(0, 69) });
@@ -56,10 +56,10 @@ export class SocialTagsService {
                     } else {
                         this.titleService.setTitle(this.data.title);
                         const description = this.data.desc ? this.data.desc : this.tagDescription;
-                        this.meta.updateTag({ name: 'description', content: description });
+                        this.meta.updateTag({ name: 'description', content: description || 'TsuKpa Blog' });
                         // this.meta.updateTag({ name: 'image', content: this.urlPrefix + '/' + this.tagImage });
-                        this.meta.updateTag({ name: 'og:title', content: this.data.title });
-                        this.meta.updateTag({ name: 'og:description', content: description });
+                        this.meta.updateTag({ name: 'og:title', content: this.data.title || 'TsuKpa Blog' });
+                        this.meta.updateTag({ name: 'og:description', content: description || 'TsuKpa Blog' });
                         this.meta.updateTag({ name: 'og:type', content: 'website' });
                         // this.meta.updateTag({ name: 'og:image', content: this.urlPrefix + '/' + this.tagImage });
                         // this.meta.updateTag({ name: 'twitter:title', content: this.data.title });
