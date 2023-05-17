@@ -47,3 +47,6 @@ Thumbs.db
 
 # Logging Files
 scully.log
+
+# Local Netlify folder
+.netlify
