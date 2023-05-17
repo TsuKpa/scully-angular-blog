@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # Logging Files
-*.log
+scully.log
