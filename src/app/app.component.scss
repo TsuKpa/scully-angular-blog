@@ -54,9 +54,9 @@
 
     .container-body .container {
         background-color: rgb(23, 23, 23);
-        border-width: 0;
+        border-width: 0 !important;
         border-radius: 0.5rem;
-        box-shadow: 0 0 0 1px rgba(255, 255, 255, .2);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, .2) !important;
 
         .link a {
             color: #fff !important;
