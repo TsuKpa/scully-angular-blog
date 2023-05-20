@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 @Injectable({ providedIn: 'root'})
 export class ToggleDarkThemeService {
     isToggle$: Subject<boolean> = new Subject();
-    toggle(event) {
-        this.isToggle$.next(event.target.checked);
+    toggle(value) {
+        this.isToggle$.next(value);
     }
 }

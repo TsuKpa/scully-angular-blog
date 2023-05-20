@@ -12,7 +12,7 @@
         <ul id="main-nav" [ngStyle]="{ 'display': isHide ? 'none' : 'flex' }">
             <li>
                 <label for="toggle-dark-theme" class="switch">
-                    <input type="checkbox" name="toggle-dark-theme" id="toggle-dark-theme" (click)="toggleDarkTheme($event)">
+                    <input [checked]="isDarkMode" type="checkbox" name="toggle-dark-theme" id="toggle-dark-theme" (click)="toggleDarkTheme($event)">
                     <span class="slider"></span>
                 </label>
             </li>
