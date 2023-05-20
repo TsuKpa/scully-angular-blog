@@ -1,114 +1,164 @@
+
 .navbar {
-    font-size: 1rem;
-    background-image: linear-gradient(260deg, #2376ae 0%, #679b9b 100%);
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding-bottom: 1rem;
+  font-size: 1rem;
+  background-image: linear-gradient(260deg, #00416d 0%, #679b9b 100%);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 1rem;
 }
 
-
 #main-nav {
-    list-style-type: none;
-    display: none;
-    flex-direction: column;
+  list-style-type: none;
+  display: none;
+  flex-direction: column;
+
+  li.pt-1 {
+    padding-top: 0.3rem;
+  }
+
+  .switch {
+    font-size: 1rem;
+    position: relative;
+    display: inline-block;
+    width: 3.5rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    input:checked + .slider {
+        background-color: #222831;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(1.5rem);
+        background: #222831;
+        box-shadow: inset -10px -5px 0 0 #a3dafd;
+    }
+
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      transition: 0.4s;
+      border-radius: 2rem;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 1.4rem;
+      width: 1.4rem;
+      border-radius: 1.5rem;
+      left: 0.3rem;
+      bottom: 0.3rem;
+      background-color: #679b9b;
+      transition: 0.4s;
+    }
+  }
 }
 
 #main-nav li {
-    text-align: center;
-    margin: 1rem auto;
+  text-align: center;
+  margin: 1rem auto;
 }
 
 .nav-links,
 #logo {
-    text-decoration: none;
-    color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #logo:hover,
 .nav-links:hover {
-    color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 #logo {
-    display: inline-block;
-    text-transform: capitalize;
-    font-size: 1.3rem;
-    margin-top: 1.2rem;
-    margin-left: 2rem;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  margin-top: 1.2rem;
+  margin-left: 2rem;
 }
 
 #navbar-toggle {
-    position: absolute;
-    top: 1.1rem;
-    right: 1.2rem;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5rem;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
 }
 
 #navbar-toggle:hover {
-    color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
 }
 
 @media screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        padding-bottom: 0;
-        height: 70px;
-        align-items: center;
-    }
+  #main-nav {
+    display: flex !important;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
-    #main-nav {
-        display: flex !important;
-        margin-right: 30px;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
+  #main-nav li {
+    margin: 0;
+  }
 
-    #main-nav li {
-        margin: 0;
-    }
+  .nav-links {
+    margin-left: 40px;
+  }
 
-    .nav-links {
-        margin-left: 40px;
-    }
+  #logo {
+    margin-top: 0;
+  }
 
-    #logo {
-        margin-top: 0;
-    }
-
-    #navbar-toggle {
-        display: none;
-    }
-
+  #navbar-toggle {
+    display: none;
+  }
 }
 
-
-
 .header {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    opacity: 0.0.1;
-    background-color: linear-gradient(260deg, #2376ae 0%, #679b9b 100%);
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.1;
+  background-color: linear-gradient(260deg, #2376ae 0%, #679b9b 100%);
 }
 
 .progress-container {
-    width: 100%;
-    height: 2px;
-    background: transparent;
+  width: 100%;
+  height: 2px;
+  background: transparent;
 }
 
 .progress-bar {
-    height: 2px;
-    background: #51adcf;
-    width: 0%;
+  height: 2px;
+  background: #51adcf;
+  width: 0%;
 }
 
 .content {
-    padding: 100px 0;
-    margin: 50px auto 0 auto;
-    width: 80%;
+  padding: 100px 0;
+  margin: 50px auto 0 auto;
+  width: 80%;
 }

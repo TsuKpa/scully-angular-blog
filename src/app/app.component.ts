@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ToggleDarkThemeService } from './toggle-dark-theme.service';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { SocialTagsService } from './social-tags.service';
 import { Title } from "@angular/platform-browser";
 
@@ -10,7 +11,9 @@ import { Title } from "@angular/platform-browser";
 })
 export class AppComponent implements OnInit {
     public constructor(private tagsService: SocialTagsService,
-        private titleService: Title) {
+        private titleService: Title,
+        private toggleDarkThemeService: ToggleDarkThemeService,
+        private renderer: Renderer2) {
         this.tagsService.setTitleAndTags();
     }
 
@@ -18,5 +21,12 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
             this.titleService.setTitle('TsuKpa Blog');
         }, 100);
+        this.toggleDarkThemeService.isToggle$.subscribe(toggle => {
+            if (toggle) {
+                this.renderer.addClass(document.body, 'dark-theme');
+            } else {
+                this.renderer.removeClass(document.body, 'dark-theme');
+            }
+        });
     }
 }

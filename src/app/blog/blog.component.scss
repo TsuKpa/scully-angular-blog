@@ -7,7 +7,7 @@ h1 {
 }
 
 .container-blog {
-    margin-bottom: 3rem;
+    margin: 2rem 0;
     max-width: 98vw !important;
     min-height: 100vh;
     display: grid;
@@ -20,6 +20,10 @@ h1 {
 .blog-post {
     grid-area: main;
     background-color: rgba(255, 255, 255, 0.8);
+
+    h1 {
+        font-weight: 800;
+    }
 
     a {
         color: #337ab7;

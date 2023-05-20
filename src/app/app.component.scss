@@ -1,0 +1,74 @@
+::ng-deep body.dark-theme {
+    color: #fff;
+    background-color: #000;
+
+    .container {
+        .main {
+            border: none;
+            box-shadow: none;
+
+            .content-container {
+                padding: 1rem;
+                background-color: rgb(23, 23, 23);
+                border-width: 0;
+                border-radius: 0.5rem;
+                box-shadow: 0 0 0 1px rgba(255, 255, 255, .2);
+                
+                .content-items {
+                    .content-header .content-header-tag .tag-item {
+                        a {
+                            color: #a3dafd;
+                        }
+    
+                        a:hover {
+                            color: #6196cc;
+                        }
+                    }
+
+                    .content-footer {
+                        a {
+                            color: #337ab7;
+                        }
+
+                        a:hover {
+                            color: #70b8f7;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+    .container-blog {
+        .blog-post {
+            padding: 0 2.5rem;
+            border-radius: 0.5rem;
+            background-color: rgb(23, 23, 23);
+            h1 {
+                color: #fff;
+            }
+        }
+    }
+
+    .container-body .container {
+        background-color: rgb(23, 23, 23);
+        border-width: 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, .2);
+
+        .link a {
+            color: #fff !important;
+        }
+    }
+
+    @media only screen and (max-width: 640px) {
+        .container-blog {
+            max-width: none;
+            .blog-post {
+                padding: 0 1rem;
+            }
+        }
+    }
+}

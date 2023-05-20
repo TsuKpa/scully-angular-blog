@@ -1,44 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
 @import url(https://fonts.googleapis.com/css2?family=Nunito&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 /* include CSS for prism toolbar */
-@import '~prismjs/plugins/toolbar/prism-toolbar.css';
+@import "~prismjs/plugins/toolbar/prism-toolbar.css";
 /* check node_modules/prismjs/themes/ for the available themes */
-@import '~prismjs/themes/prism-tomorrow';
-
+@import "~prismjs/themes/prism-tomorrow";
 
 :root {
-    --lh: 1.5rem;
-    font-size: 18px;
+  --lh: 1.5rem;
+  font-size: 18px;
 }
 
 html {
-    font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: var(--lh);
+  font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  line-height: var(--lh);
 }
 
 *,
 :after,
 :before {
-    box-sizing: border-box;
-    border: 0 solid #e2e8f0;
+  box-sizing: border-box;
+  border: 0 solid #e2e8f0;
 }
-
 
 body {
-    min-height: 100vh;
-    margin: 0;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    color: #222831;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  color: #222831;
 }
 
-
-
 a:hover {
-    color: slategrey;
+  color: slategrey;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }

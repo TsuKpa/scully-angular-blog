@@ -3,7 +3,7 @@
     border-bottom: 1px;
     border-style: solid;
     border-color: #cbd5e0;
-    margin: 0 0 2rem 0;
+    margin: 0 0 1rem 0;
 
     .content-image {
         margin-right: 2rem;
@@ -21,7 +21,7 @@
     }
 
     .content-header-date {
-        font-weight: 600;
+        font-weight: 500;
     }
 
     .content-header-tag {
@@ -39,7 +39,7 @@
 
     .content-title {
         display: flex;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.5rem;
         line-height: 2.2rem;
 
@@ -58,7 +58,7 @@
         justify-content: flex-end;
 
         a {
-            font-weight: 700;
+            font-weight: 600;
             color: #00416d;
         }
     }

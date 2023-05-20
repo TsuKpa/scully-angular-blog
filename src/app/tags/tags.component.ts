@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
@@ -16,6 +17,7 @@ export class TagsComponent {
     constructor(
         public scully: ScullyRoutesService,
         private route: ActivatedRoute,
+        private titleService: Title
     ) { }
 
     ngOnInit() {
@@ -27,5 +29,6 @@ export class TagsComponent {
             )
         });
         window.scroll({ top: 0, left: 0});
+        this.titleService.setTitle('TsuKpa Blog')
     }
 }
