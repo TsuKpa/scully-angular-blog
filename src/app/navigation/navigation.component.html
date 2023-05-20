@@ -10,10 +10,16 @@
         </span>
         <a routerLink="/" id="logo">tsukpa's blog</a>
         <ul id="main-nav" [ngStyle]="{ 'display': isHide ? 'none' : 'flex' }">
-            <li (click)="hideMainNav()">
+            <li>
+                <label for="toggle-dark-theme" class="switch">
+                    <input [checked]="isDarkMode" type="checkbox" name="toggle-dark-theme" id="toggle-dark-theme" (click)="toggleDarkTheme($event)">
+                    <span class="slider"></span>
+                </label>
+            </li>
+            <li (click)="hideMainNav()" class="pt-1">
                 <a routerLink="/" class="nav-links">Home</a>
             </li>
-            <li (click)="hideMainNav()">
+            <li (click)="hideMainNav()" class="pt-1">
                 <a routerLink="/about" class="nav-links">About Me</a>
             </li>
         </ul>
