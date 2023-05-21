@@ -13,7 +13,7 @@ tags:
 lastmod: 2023-05-21T05:34:51.411Z
 topics:
   - blog
-tweet: "M
+tweet:
 format: blog
 canonical_url:
 seo:
@@ -24,7 +24,7 @@ seo:
 publish: true
 ---
 
-# Đôi lời chia sẽ sau khi hoàn thành chuyến "phượt" dài 2 năm
+# Đôi lời chia sẽ sau khi hoàn thành chuyến 'phượt' dài 2 năm
 
 ![phuot](https://media-cdn-v2.laodong.vn/Storage/newsportal/2019/1/24/654161/Anh-Kn-Phuot-1.jpg)
 
@@ -60,7 +60,7 @@ Lý do đơn giản là mình là người hướng nội part-time với lại 
 
 Cũng như các bạn đồng trang lứa khác, học xong chương trình ĐH thì đi làm. Chắc là do có duyên nên lúc làm Niên luận (đồ án) thì thầy hướng dẫn cho mình làm đề tài về [MEAN](https://en.wikipedia.org/wiki/MEAN_(solution_stack)) stack nên mình quyết định theo nghề dev luôn. May mắn là khi báo cáo luận văn xong mình được nhận vào làm tại một công ty ở khu Trung Sơn gần Quận 7 (Bạn nào ở SG lâu chắc biết khu này 😌).
 
-Vào một ngày đẹp trời đang code dở tính năng như mọi ngày thì nghe tin như sét đánh ngang tai, có lệnh gọi khám sức khoẻ. Wow, đứng hình vài giây, mình nghĩ: "Éc năm nay học xong rồi sao xin [giấy tạm hoãn](https://thuvienphapluat.vn/phap-luat/thoi-su-phap-luat/cach-xin-tam-hoan-nghia-vu-quan-su-nam-2023-mau-don-xin-tam-hoan-nghia-vu-quan-su-moi-nhat-25287.html)?"
+Vào một ngày đẹp trời đang code dở tính năng như mọi ngày thì nghe tin như sét đánh ngang tai, có lệnh gọi khám sức khoẻ. Wow, đứng hình vài giây, mình nghĩ: 'Éc năm nay học xong rồi sao xin [giấy tạm hoãn](https://thuvienphapluat.vn/phap-luat/thoi-su-phap-luat/cach-xin-tam-hoan-nghia-vu-quan-su-nam-2023-mau-don-xin-tam-hoan-nghia-vu-quan-su-moi-nhat-25287.html)?'
 
 #### Trải nghiệm khi khám sức khoẻ và lúc nhập ngũ
 
@@ -99,7 +99,7 @@ Lúc lên xe và đi vào đơn vị thì tâm trạng khá tò mò và hứng t
 
 - __Các quy định/chế độ__: Có tới [11 chế độ trong ngày và 3 chế độ trong tuần](https://luatminhkhue.vn/11-che-do-trong-ngay-cua-quan-doi-la-gi.aspx) cần phải biết để thực hiện cho đúng (Khi bạn trễ giờ hoặc thực hiện sai sẽ bị đồng đội buồn phiền và sẽ bị kỷ luật)
 
-- __Cách mà quân đội vận hành__: _"Quân lệnh như sơn"_ là câu nói đúng nhất trong quân đội, giống như xã hội bên ngoài có người nói và có người thực hiện.
+- __Cách mà quân đội vận hành__: _'Quân lệnh như sơn'_ là câu nói đúng nhất trong quân đội, giống như xã hội bên ngoài có người nói và có người thực hiện.
 
 - __3 tiếng nổ__: Là các kỹ năng cơ bản, cần thiết của mỗi quân nhân để chiến đấu
   - Bắn súng tiểu liên AK: Vì đơn vị mình chỉ cho bắn phát một nên cũng hơi thất vọng, tổng 3 tháng tân binh bắn được khoảng 27 viên AK.

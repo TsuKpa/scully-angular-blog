@@ -340,3 +340,21 @@ No configuration for route "[33m/tags/:keyword[39m" found. Skipping The router
      ... tly run code right from the CDN.
                                          ^
 
+ The router plugin "[33mcontentFolder[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitYAMLException: bad indentation of a mapping entry at line 20, column 48:
+     ... a sẽ sau khi hoàn thành chuyến "phượt" dài 2 năm
+                                         ^
+
+ The router plugin "[33mcontentFolder[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitYAMLException: bad indentation of a mapping entry at line 20, column 48:
+     ... a sẽ sau khi hoàn thành chuyến "phượt" dài 2 năm
+                                         ^
+
+Received Kill command
+ The ___Scully_system_plugins_Alter_at_own_RISK___ plugin "[33mpuppeteerRender[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exitError: Protocol error: Connection closed. Most likely the page has been closed.
+
+Received Kill command

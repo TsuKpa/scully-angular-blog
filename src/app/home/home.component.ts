@@ -14,6 +14,8 @@ export class HomeComponent implements OnInit {
   routes$: Observable<ScullyRoute[]> = this.scully.available$.pipe(
     map((routes) => routes.filter((route) => {
       return route.route.includes('/blog/');
+    }).sort((route1: any, route2: any) => {
+      return (new Date(route2.createdDate).getTime() - new Date(route1.createdDate).getTime());
     })),
   );
 
