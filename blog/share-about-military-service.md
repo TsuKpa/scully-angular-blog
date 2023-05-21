@@ -120,7 +120,7 @@ Thời gian này thì mình được học chuyên ngành làm sao để đảm 
 
 Khoảng tháng 7 thì anh Tâm Trung đội trưởng của mình chuyển đơn vị khác, cũng chúc mừng anh vì anh là người tâm lý, mặc dù hơi gắt nhưng biết mình cũng học ĐH nên cũng giúp đỡ mình nhiều thứ. Sau đó thì tụi mình đi chống dịch ở Phường Tân Quý, Quận Tân Phú, TP. HCM.
 
-![chong-dich](http://quantri.tanphu.hochiminhcity.gov.vn/UploadImages/tanphu/2021_10/TC%20Good%20N/tanphu-hinh4_11020218.jpg)
+![chong-dich]([http://quantri.tanphu.hochiminhcity.gov.vn/UploadImages/tanphu/2021_10/TC%20Good%20N/tanphu-hinh4_11020218.jpg](https://images2.thanhnien.vn/uploaded/ngocduong/2021_08_23/31_KHEI.jpg?width=500))
 
 Công việc chủ yếu khi đi chống dịch là chia, giao đồ ăn, chốt đường, lấy thực phẩm và vác gạo (phường mình đông dân nhất nên vác tận hơn 250 tấn 😜). Tụi mình mỗi 3 ngày phải test một lần khiến cái lỗ mũi nó tè lè luôn. Hơi buồn vì khi tới thời gian nhận bằng khen ở Quận thì có bạn ở đội khác dính nên không đi được (Phường mình có 2 tiểu đội khoảng 15 người)
 
