@@ -42,7 +42,7 @@ export class SocialTagsService {
                     // this.meta.updateTag({ name: 'twitter:creator', content: this.userTwitter });
                     // this.meta.updateTag({ name: 'twitter:site', content: this.userTwitter });
                     if (link?.title) {
-                        this.titleService.setTitle(link.title + ' | ' + link.author || 'TsuKpa');
+                        this.titleService.setTitle(link.title + ' | ' + (link.author || 'TsuKpa'));
                         this.meta.updateTag({ name: 'description', content: link.description });
                         this.meta.updateTag({ name: 'image', content: this.urlPrefix + '/' + link.photo });
                         this.meta.updateTag({ name: 'og:title', property: 'og:title', content: link.title || 'TsuKpa Blog'});
