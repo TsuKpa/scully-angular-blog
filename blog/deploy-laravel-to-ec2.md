@@ -267,34 +267,36 @@ ________________
 - AMI: Ubuntu
 - Instance type: t2.micro (free tier)
 
-![Create EC2](../src/assets/laravel-to-ec2/ec21.PNG "Create EC2")
+![Create EC2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg5RX0HpPeakkLf3MplYv8FAq42xYueQIhYeIrk8pLL_ViJyLf-4Pq6__7ew6dzRBvaDhn-8aq-Y9in7aoBaXpZQSbjxve75bhchSHaHQzeoepWEmhYqQigRqKuG_dtafoJV-HOeaf4XcUuQ-ZPt8b-aTmgDgOpi4Pq6XCSvxWnIzQH22BcE4ZyURSz_g/s16000/ec21.PNG "Create EC2")
 
 - Select existing security group or you can change later
 
-![Create EC2](../src/assets/laravel-to-ec2/ec22.PNG "Create EC2")
+![Create EC2](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjo4ORXXG8UsLvbrMNTVv9IYoXnlTY116Wj40G36ew_iQ9oQX3Vo-cEYffkzOBXO8_5E9jPmszgx-fdlwCcO6i9IYVy8QHdv0lONWwdNMCvtuNUfUu9-FrmEQ_zv4I3x6SMO0E7V8zUDohdcGIwKaVuxB7vHmIwPhWYIuFRAis9rkWH1AgE4pOQiVV6PQ/s16000/ec22.PNG "Create EC2")
 
 ## 2. Create Security Group
 
 We allow SSH, ICMP and TCP from anywhere and in Outbound we allow anything
   
-![Create Security Group](../src/assets/laravel-to-ec2/sg.PNG "Create Security Group")
+![Create Security Group](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzbsPELATr7bUKB6xhsy47k4DzYo7IbPprNVgtYzJX-lN-WsFGaC6aNNzoARMoAMrgtcd5HODQ5LUccO6DdI_BTbRfvNNuGU3DcPdblhDIP0N5BOTw7u-ewpDcqXRdJo_jd3raioSGDHdY-iWaNnzke70HiCFcqm6ShinnisHTz-fTmadxJXAh6xc4BA/s16000/sg.PNG "Create Security Group")
 
 ## 3. Create Route table
 
 Route the traffic to the internet gateway (igw)
 
-![Create Route table](../src/assets/laravel-to-ec2/route-table.PNG "Create Route table")
+![Create Route table](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDUqWnSekDwV1PwS_kY4vTF0j3Yyo9dAJBA3Y7mYSSjESrkBheN3bP4KRKFRX5LmNSk4f1WjRaOx0n1r6ZoSTN1zAUkZm9RtlhYSYaHqdK5pd9llEMyDz92j8wpcbDcEaCGnt73pUOrVRpMlnQEu-DIO5q22bE0tZctj6pOKwZq0n50ZorLBiQZnxjGg/s16000/route-table.PNG "Create Route table")
 
 ## 4. Create RDS
 
 Create database for our application
 
-![Route table](../src/assets/laravel-to-ec2/rds1.PNG "Route table")
+![Route table](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0pljkRSLZ-LP4ZsSs5moMItjqkFOHNJ-A4DpUm2jKGgMm1Pu2v9qwH0qTf7yTzgMplaa1oTyVAHA9mgceAsMIxHqyOdhZiUlVAqUu10Xgf3nY6atKCvLAaA4jaS_6zH1SZ1HKpFlF8hdOAexB4wUdF0TxIe7APbMqwj4aO1ddcT1ppySNeOgzJLkrcQ/s16000/rds1.PNG "Route table")
 
 Choose your DB instance type
 
-![Select RDS engine type](../src/assets/laravel-to-ec2/rds2.PNG "Select RDS engine type")
+![Select RDS engine type](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg_JTowmYm8ukJJbIbPthUrervncRaK-IW3-GShvzI9fWEKoFa__DIYPMSzd_GrtIkCfNVWE6_6clQ9Kg6sdhc9xhoHvi1KBi-6Q-_xoPInGSRT3u4fGgAifFGhbpU020pXx7p3dxkTAuNJq-HcbH4M-acnxcw-d2wRjnSLMB-kW7NlJy8Yb9_Blud4xA/s16000/rds2.PNG "Select RDS engine type")
 
 Check the option connection to the EC2 instance
 
-![Check connection](../src/assets/laravel-to-ec2/rds3.PNG "Check connection")
+![Check connection](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEisOHbZ2KQvKJgrdixV6wXr4lBJfj7z7Co22RBKtKEMoY66edloBMNVG_bzCbwbGIqYi6PSGrpbc8YjFTc0JRMAHr5YjE1DBGzS3vf6afmh_WXPr9ZATNWTcGuNlqAPrl-ZUiQ2d94fLz-niyfErHRrYESWgmrXa31JSSVX6_B0EWJvS3FWG0QQzzpDDQ/s16000/rds3.PNG "Check connection")
+
+#### After all you can access your application by enter your public IP EC2 address in the browser. Enjoy it 😉
