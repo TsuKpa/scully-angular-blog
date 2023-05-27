@@ -16,6 +16,7 @@ topics:
 tweet:
 format: blog
 canonical_url:
+photo: https://gbengaoni.com/images/1__cHw6zbAivDFI__aZkeN1mjg.png
 seo:
   metatitle: >
     Deploy Laravel project to Amazon EC2
