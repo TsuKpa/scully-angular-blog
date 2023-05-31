@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&display=swap);
 /* include CSS for prism toolbar */
 @import "~prismjs/plugins/toolbar/prism-toolbar.css";
 /* check node_modules/prismjs/themes/ for the available themes */
@@ -18,6 +18,7 @@ html {
   font-family: "Nunito", "Open Sans", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   line-height: var(--lh);
+  font-display: swap;
 }
 
 *,
