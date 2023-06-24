@@ -24,6 +24,10 @@ seo:
 publish: true
 ---
 
+# Vim và lập trình viên phần I
+
+![background](https://img.devrant.com/devrant/rant/r_2080368_znDCZ.jpg)
+
 ## Tại sao lại là Vim?
 
 Khi bạn code quá nhanh và muốn tăng thêm tốc độ gõ phím của mình? Đây là một sự lựa chọn hợp lý để làm điều đó. Hãy cùng hiểu Vim như một ngôn ngữ nhé. Thật ra nó là một editor khá nổi tiếng.
