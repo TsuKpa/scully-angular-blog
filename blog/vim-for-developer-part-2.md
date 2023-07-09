@@ -46,15 +46,15 @@ Chế độ này cho phép chúng ta chỉnh sửa các dấu ngoặc đơn, d�
 
 Cú pháp như sau:
 
-```ds <kí tự cần xóa> ```: Xóa kí tự xung quanh
+```text ds <kí tự cần xóa>```: Xóa kí tự xung quanh
 
  Ví dụ:
 
-     #input: “hello”
+  #input: “hello”
 
-     Thao tác: ds”
+  Thao tác: ds”
 
-     #output: hello
+  #output: hello
 
 ![ds](https://1.bp.blogspot.com/-Sfdg1nXkqXo/XhtIrpfdznI/AAAAAAAACC8/Xyfi6ERNawgF5NhM3XD0naAygSaQfx7UgCEwYBhgL/s640/ds.gif)
 
@@ -66,11 +66,12 @@ Cú pháp như sau:
 
  Ví dụ:
 
-     #input: “hello”
 
-     Thao tác: cs”’
+  #input: “hello”
 
-     #output: ‘hello’
+  Thao tác: cs”’
+
+  #output: ‘hello’
 
 ![cs](https://1.bp.blogspot.com/-4A9jr6jnSU0/XhtIrkdDfPI/AAAAAAAACC4/lpBkGcKFGesHOrLiIxsjnNan0ZS9CIuqQCEwYBhgL/s640/cs.gif)
 
@@ -82,11 +83,11 @@ Cú pháp như sau:
 
  Ví dụ:
 
-     #input: chọn 1 từ với lệnh viw. hello
+  #input: chọn 1 từ với lệnh viw. hello
 
-     Thao tác: S”
+  Thao tác: S”
 
-     #output: “hello”
+  #output: “hello”
 
 ![S](https://1.bp.blogspot.com/-Xyy900CgthE/XhtIsblhxXI/AAAAAAAACDA/kPh5DBsq9D4We79_u78ceu3VMAVHjc5WwCEwYBhgL/s640/surround.gif)
 
@@ -132,4 +133,4 @@ Ngoài ra còn nhiều tính năng đang chờ bạn khám phá đó. Link exten
 
 Đọc lại phần I tại đây nhé
 
-[https://tsukpa.netlify.app/blog/vim-for-developer-part-1](https://tsukpa.netlify.app/blog/vim-for-developer-part-1)
+[https://tsukpa.netlify.app/blog/vim-for-developer-part-1](https://tsukpa.netlify.app/blog/vim-for-developer-part-1){:target="_blank"}
