@@ -37,13 +37,20 @@ h1 {
         text-align: justify;
     }
 
+    code[class*=language-], pre[class*=language-] {
+        background-color: unset !important;
+        color: white !important;
+    }
+
     code {
-        color: #d69e2e;
+        color: black;
         border-radius: .25rem;
         font-weight: 200;
         overflow-wrap: break-word;
         padding: .1rem .25rem;
+        background-color: #e0e2e3;
     }
+    
 
     blockquote {
         color: #718096;
