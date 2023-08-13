@@ -82,6 +82,7 @@ h1 {
 @media only screen and (max-width: 640px) {
     .container-blog {
         grid-template-columns: 2% 96% 2%;
+        margin-top: 0 !important;
     }
 }
 
