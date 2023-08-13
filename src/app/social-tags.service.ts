@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { ScullyRoutesService } from '@scullyio/ng-lib';
-import { filter, map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+import { distinctUntilChanged, filter, map, takeLast, tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +22,7 @@ export class SocialTagsService {
     readonly urlPrefix: string = 'https://tsukpa.netlify.app/';
     readonly siteName: string = 'TsuKpa\'s Blog';
     // readonly userTwitter: string = '@tsukpa';
+    currentPost = new Subject();
 
     setTitleAndTags() {
         this.router.events.pipe(
@@ -36,6 +38,10 @@ export class SocialTagsService {
         ).subscribe(() => {
             this.scully.getCurrent().subscribe(
                 link => {
+                    setTimeout(() => {
+                        this.currentPost.next(link);
+                    }, 100);
+                    
                     this.meta.updateTag({ name: 'twitter:url', content: this.urlPrefix + this.router.url });
                     this.meta.updateTag({ name: 'og:url', content: this.urlPrefix + this.router.url });
                     this.meta.updateTag({ name: 'og:site_name', property: 'og:site_name', content: this.siteName });
@@ -48,7 +54,6 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: 'og:title', property: 'og:title', content: link.title || 'TsuKpa Blog'});
                         this.meta.updateTag({ name: 'og:description', property: 'og:description', content: link.description });
                         this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article'});
-                        console.log(link);
                         
                         this.meta.updateTag({ name: 'article:section', property: 'article:section', content: (link.tags as string[])[0] });
                         this.meta.updateTag({ name: 'og:image', content: this.urlPrefix + '/' + link.photo });

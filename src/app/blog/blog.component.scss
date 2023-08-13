@@ -7,8 +7,8 @@ h1 {
 }
 
 .container-blog {
-    margin: 2rem 0;
-    max-width: 98vw !important;
+    margin: 1rem 0;
+    max-width: 98vw;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -81,6 +81,7 @@ h1 {
 /* Extra small devices (phones, 640px and down) */
 @media only screen and (max-width: 640px) {
     .container-blog {
+        max-width: 100vw;
         grid-template-columns: 2% 96% 2%;
         margin-top: 0 !important;
     }
@@ -89,6 +90,7 @@ h1 {
 /* Small devices (portrait tablets and large phones, 640px and up) */
 @media only screen and (min-width: 640px) {
     .container-blog {
+        max-width: 100vw;
         grid-template-columns: 5% 90% 5%;
     }
 }

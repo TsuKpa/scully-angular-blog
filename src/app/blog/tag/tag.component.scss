@@ -1,0 +1,10 @@
+.container-tags {
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    .tag {
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+}

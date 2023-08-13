@@ -14,7 +14,7 @@ export class PostItemComponent {
 }
 
 
-interface BlogData {
+export interface BlogData {
     route: string;
     title: string;
     description: string;
