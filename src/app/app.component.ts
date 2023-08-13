@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         setTimeout(() => {
             this.titleService.setTitle('TsuKpa Blog - Nam Quang Nguyen');
-        }, 110);
+        }, 150);
         this.toggleDarkThemeService.isToggle$.subscribe(toggle => {
             if (toggle) {
                 this.renderer.addClass(document.body, 'dark-theme');
