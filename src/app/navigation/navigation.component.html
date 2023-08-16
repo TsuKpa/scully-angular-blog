@@ -8,7 +8,7 @@
         <span id="navbar-toggle" (click)="hideMainNav()">
             <i class="fa fa-bars"></i>
         </span>
-        <a routerLink="/" id="logo">tsukpa's blog</a>
+        <a routerLink="/" (click)="hideMainNav()" id="logo">tsukpa's blog</a>
         <ul id="main-nav" [ngStyle]="{ 'display': isHide ? 'none' : 'flex' }">
             <li>
                 <label for="toggle-dark-theme" class="switch">

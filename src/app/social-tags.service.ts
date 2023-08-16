@@ -40,7 +40,7 @@ export class SocialTagsService {
                 link => {
                     setTimeout(() => {
                         this.currentPost.next(link);
-                    }, 100);
+                    }, 500);
                     
                     this.meta.updateTag({ name: 'twitter:url', content: this.urlPrefix + this.router.url });
                     this.meta.updateTag({ name: 'og:url', content: this.urlPrefix + this.router.url });
