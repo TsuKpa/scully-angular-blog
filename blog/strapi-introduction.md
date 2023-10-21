@@ -5,6 +5,7 @@ description: >
     When you want create a simple RESTful API server, this is the good choice for that solution.
 authors:
   - Nam Nguyen (TsuKpa)
+photo: https://d2zv2ciw0ln4h1.cloudfront.net/uploads/Capture_d_ecran_2020_10_07_a_13_27_46_3bf18c57bf.png
 createdDate: 21 October, 2023
 tags:
   - Strapi
