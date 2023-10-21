@@ -53,7 +53,7 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: 'og:title', property: 'og:title', content: link.title || 'TsuKpa Blog'});
                         this.meta.updateTag({ name: 'og:description', property: 'og:description', content: link.description });
                         this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article'});
-                        this.meta.updateTag({ name: 'og:image', content: this.urlPrefix + '/' + link.photo });
+                        this.meta.updateTag({ name: 'og:image', content: link.photo });
                         
                         this.meta.updateTag({ name: 'article:section', property: 'article:section', content: (link.tags as string[])[0] });
                         this.meta.updateTag({ name: 'twitter:title', content: link.title.substring(0, 69) });
@@ -67,7 +67,7 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: 'og:title', content: this.data.title || 'TsuKpa Blog' });
                         this.meta.updateTag({ name: 'og:description', content: description || 'TsuKpa Blog' });
                         this.meta.updateTag({ name: 'og:type', content: 'website' });
-                        this.meta.updateTag({ name: 'og:image', content: this.urlPrefix + '/' + "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIJpx-vFLp90XHqqQAuRwEGM2e8DnrKNf52-zYGqcwCuLhFnAxVMjQdmmN8vCS9YaLqZWmg6fmFBQDVnI6FlLbXnYJdrKvAxlVHY9QjWYrdAmebYQFZKllmkgrrEJdlkUHwXq8ururuWwpmS0YU2QROlY4CGxdyl1cb60sfl7EsI-jQe2KoolvySzLsg/s16000/Group%2028.png"});
+                        this.meta.updateTag({ name: 'og:image', content: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiIJpx-vFLp90XHqqQAuRwEGM2e8DnrKNf52-zYGqcwCuLhFnAxVMjQdmmN8vCS9YaLqZWmg6fmFBQDVnI6FlLbXnYJdrKvAxlVHY9QjWYrdAmebYQFZKllmkgrrEJdlkUHwXq8ururuWwpmS0YU2QROlY4CGxdyl1cb60sfl7EsI-jQe2KoolvySzLsg/s16000/Group%2028.png"});
                         // this.meta.updateTag({ name: 'twitter:title', content: this.data.title });
                         // this.meta.updateTag({ name: 'twitter:description', content: description.substring(0, 123) });
                         // this.meta.updateTag({ name: 'twitter:image', content: this.urlPrefix + '/' + this.tagImage });
