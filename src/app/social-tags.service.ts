@@ -54,6 +54,8 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: 'og:description', property: 'og:description', content: link.description });
                         this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article'});
                         this.meta.updateTag({ name: 'og:image', content: link.photo });
+                        this.meta.updateTag({ name: 'article:published_time', content: link.createdDate });
+                        this.meta.updateTag({ name: 'article:modified_time', content: link.lastmod });
                         
                         this.meta.updateTag({ name: 'article:section', property: 'article:section', content: (link.tags as string[])[0] });
                         this.meta.updateTag({ name: 'twitter:title', content: link.title.substring(0, 69) });
