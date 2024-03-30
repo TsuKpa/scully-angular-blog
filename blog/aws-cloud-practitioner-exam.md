@@ -5,7 +5,7 @@ description: >
     Bài viết này sẽ cung cấp một số mẹo và chiến lược hữu ích để chuẩn bị và thi chứng chỉ AWS Solution Architect Associate (SAA-C03)
 authors:
   - Nam Nguyen (TsuKpa)
-createdDate: 2024-03-30T15:05:08.421Z
+createdDate: 30 Mar, 2024
 lastmod: 2024-03-30T15:05:08.421Z
 photo: https://tsukpa-docs.s3.ap-southeast-1.amazonaws.com/blog/images/saa.png
 tags:
