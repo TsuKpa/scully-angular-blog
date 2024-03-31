@@ -190,9 +190,9 @@ Hy vọng bài viết này giúp bạn có cái nhìn tổng quan hơn về AWS 
 
 ### Tài liệu liên quan
 
-- Stéphane Maarek SAA Course: [https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
+- Stéphane Maarek SAA Course: [link](https://www.udemy.com/course/aws-certified-solutions-architect-associate-saa-c03)
 
-- Giải đề theo sư phụ Ấn Độ: [https://www.youtube.com/watch?v=Wee_F8_k8s4&list=PLviC8AFqAj5CDH_e9k3idoBOBhVXC-WNm&index=11&ab_channel=PeaceOfCode](https://www.youtube.com/watch?v=Wee_F8_k8s4&list=PLviC8AFqAj5CDH_e9k3idoBOBhVXC-WNm&index=11&ab_channel=PeaceOfCode)
+- Giải đề theo sư phụ Ấn Độ: [link](https://www.youtube.com/watch?v=Wee_F8_k8s4&list=PLviC8AFqAj5CDH_e9k3idoBOBhVXC-WNm&index=11&ab_channel=PeaceOfCode)
 
 Ngoài ra thì các bạn có thể lên các group để xin đề để làm, chúc các bạn may mắn.
 
