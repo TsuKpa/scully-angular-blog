@@ -7,22 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-    constructor(private toggleDarkThemeService: ToggleDarkThemeService) {}
+    constructor(private toggleDarkThemeService: ToggleDarkThemeService) { }
 
     isHide = true;
     isDarkMode: boolean;
 
     ngOnInit(): void {
-        window.onscroll = function () { myFunction() };
+        window.onscroll = () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("my-bar").style.width = scrolled + "%";
+        };
 
-        function myFunction() {
-            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            var scrolled = (winScroll / height) * 100;
-            document.getElementById("myBar").style.width = scrolled + "%";
-        }
         if (localStorage.length) {
-            this.isDarkMode = localStorage.getItem("isDarkMode") === "true" ? true : false;
+            this.isDarkMode = localStorage.getItem("isDarkMode") === "true";
             if (this.isDarkMode) {
                 this.toggleDarkThemeService.toggle(this.isDarkMode);
             }
