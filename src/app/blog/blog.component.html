@@ -1,6 +1,6 @@
 <div class="container-blog">
     <div class="blog-post">
-        <app-tag *ngIf="tags.length" [tags]="tags"></app-tag>
+        <app-tag *ngIf="tags.length" [tags]="tags" [date]="date"></app-tag>
         <scully-content></scully-content>
         <div [appUtterances]="isProd"></div>
     </div>

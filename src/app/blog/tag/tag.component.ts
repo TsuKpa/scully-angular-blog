@@ -10,4 +10,6 @@ export class TagComponent {
     content: string;
     color: string;
   }[] = [];
+
+  @Input() date: string;
 }
