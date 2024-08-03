@@ -16,6 +16,8 @@ export class BlogComponent implements OnInit, AfterViewChecked {
         content: string;
         color: string;
     }[] = [];
+    date: string = "";
+
     constructor(
         private highlightService: HighlightService,
         private socialTagService: SocialTagsService,
@@ -37,6 +39,8 @@ export class BlogComponent implements OnInit, AfterViewChecked {
                         color: colors[index]
                     }
                 });
+
+                this.date = post.createdDate || "";
             }
         });
     }

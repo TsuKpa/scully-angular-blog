@@ -54,7 +54,7 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: 'og:description', property: 'og:description', content: link.description });
                         this.meta.updateTag({ name: 'og:type', property: 'og:type', content: 'article'});
                         this.meta.updateTag({ name: 'og:image', content: link.photo });
-                        this.meta.updateTag({ name: 'article:published_time', content: new Date(link.createdDate).toISOString() });
+                        this.meta.updateTag({ name: 'article:published_time', content: this.formatDateToISO(new Date(link.createdDate)) });
                         this.meta.updateTag({ name: 'article:modified_time', content: link.lastmod });
                         
                         this.meta.updateTag({ name: 'article:section', property: 'article:section', content: (link.tags as string[])[0] });
@@ -79,4 +79,20 @@ export class SocialTagsService {
     }
 
     private get data() { return this.activatedRoute.snapshot.firstChild.data; }
+
+    private formatDateToISO(date: Date) {
+        const timezoneOffset = 7 * 60; // Offset in minutes (in this case, +07:00)
+        const offsetHours = Math.floor(Math.abs(timezoneOffset) / 60);
+        const offsetMinutes = Math.abs(timezoneOffset) % 60;
+        const offsetSign = timezoneOffset >= 0 ? '+' : '-';
+        
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+    
+        return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}${offsetSign}${offsetHours.toString().padStart(2, '0')}:${offsetMinutes.toString().padStart(2, '0')}`;
+    }
 }

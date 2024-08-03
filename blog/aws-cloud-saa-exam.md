@@ -55,7 +55,7 @@ Ngoài ra, **AWS** cũng cung cấp các chứng chỉ đặc biệt khác như 
 
 ## 2. Quá trình ôn luyện
 
-- Khi quay trở lại làm việc sau khoảng thời gian [phượt 2 năm](https://tsukpa.netlify.app/blog/share-about-military-service), bản thân mình nhận thấy rằng việc dùng thời gian để nâng cao chất lượng code cũng như kinh nghiệm làm việc là rất khó cho bản thân mình để đuổi kịp bạn bè cùng trang lứa, nên mình sẽ đi một hướng khác đó là học thêm về cloud.
+- Khi quay trở lại làm việc sau khoảng thời gian [phượt 2 năm](/blog/share-about-military-service), bản thân mình nhận thấy rằng việc dùng thời gian để nâng cao chất lượng code cũng như kinh nghiệm làm việc là rất khó cho bản thân mình để đuổi kịp bạn bè cùng trang lứa, nên mình sẽ đi một hướng khác đó là học thêm về cloud.
 
 - Bắt đầu từ con số 0, mình tự nghiên cứu về AWS qua [Udemy](https://www.udemy.com/), lúc đầu thì cũng có hơi ngộp về số lượng dịch vụ trên AWS (2024 - hơn 200 services). Nhưng sử dụng nhiều thì cũng cỡ hơn 10 services một xíu ^^
 

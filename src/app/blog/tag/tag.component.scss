@@ -1,10 +1,34 @@
 .container-tags {
     font-size: 0.9rem;
-    cursor: pointer;
     margin-left: 0.5rem;
     margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+
     .tag {
         display: inline-block;
         margin-right: 0.5rem;
+        cursor: pointer;
+    }
+
+    .date {
+        font-style: italic;
+    }
+}
+
+/* Extra small devices (phones, 640px and down) */
+@media only screen and (max-width: 640px) {
+    .container-tags {
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-items: center;
+
+        .date {
+            margin-top: 0.5rem;
+        }
     }
 }
