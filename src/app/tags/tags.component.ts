@@ -25,10 +25,12 @@ export class TagsComponent {
             this.routes$ = this.scully.available$.pipe(
                 map((routes) => routes.filter((route) => {
                     return route.route.includes('/blog/') && route.tags.indexOf(params.keyword) !== -1;
+                }).sort((route1, route2) => {
+                    return (new Date(route2.createdDate).getTime() - new Date(route1.createdDate).getTime());
                 })),
-            )
+            );
         });
-        window.scroll({ top: 0, left: 0});
-        this.titleService.setTitle('TsuKpa Blog')
+        window.scroll({ top: 0, left: 0 });
+        this.titleService.setTitle('TsuKpa\'s Blog');
     }
 }
