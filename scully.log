@@ -440,3 +440,10 @@ Using stored unhandled routes!.
               while trying to render route "[33munknown[39m"
               Scully will exitError: Protocol error: Connection closed. Most likely the page has been closed.
 
+Puppeteer error while rendering "[33m/blog/introducing-edge-handlers-in-preview[39m"
+Error: Protocol error (Target.createTarget): Target closed.
+ we will retry rendering this page up to 3 times.Error: Protocol error: Connection closed. Most likely the page has been closed. The ___Scully_system_plugins_Alter_at_own_RISK___ plugin "[33mpuppeteerRender[39m has thrown the below error,
+              while trying to render route "[33munknown[39m"
+              Scully will exit
+
+
