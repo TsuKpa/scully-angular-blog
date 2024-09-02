@@ -1,0 +1,82 @@
+.container-body {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        width: 600px;
+        height: 365px;
+        border-style: solid;
+        border-color: azure;
+        border-width: 1px;
+        padding: 2rem;
+        margin: 2rem 0;
+        box-shadow: 1px 1px 5px 1px #e0e8e8;
+        border-radius: .25rem;
+
+        .link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 2rem;
+            margin: 0 6rem;
+            a {
+                color: #000;
+            }
+
+            a:hover {
+                color: #00416d;
+            }
+        }
+
+        img {
+            max-width: 200px;
+            max-height: 200px;
+        }
+    }
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100% !important;
+        font-size: 0.8rem;
+        margin: 0 1rem !important;
+        height: 415px !important;
+
+        .item {
+            margin: 0 !important;
+            display: block !important;
+            text-align: center;
+            height: 19rem !important;
+
+            .name {
+                margin: 0;
+            }
+
+            .description {
+                margin-top: -0.5rem;
+            }
+
+            .avatar {
+                margin: 0 !important;
+                width: 100px !important;
+                height: 100px !important;
+            }
+
+            .info {
+                margin-left: 0 !important;
+                text-align: center !important;
+                display: block !important;
+            }
+        }
+
+        .link {
+            font-size: 1.5rem !important;
+            margin: 0 3rem !important;
+        }
+    }
+}
