@@ -1,11 +1,35 @@
 <div class="container-body">
     <div class="container">
-        <div class="workshops">
-            My current workshops:
+        <h2 class="title">
+            There are all of my AWS Workshops
+        </h2>
+        <div class="table-container">
+            <table>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>URL</th>
+                  <th>Tech Stacks</th>
+                  <th>Terraform</th>
+                </tr>
+                <tr *ngFor="let ws of listWorkshops">
+                  <td>{{ws.id}}</td>
+                  <td class="text-left">{{ws.title}}</td>
+                  <td class="text-left">{{ws.description}}</td>
+                  <td class="text-left">
+                    <a href="{{ws.url}}" target="_blank">link</a>
+                  </td>
+                  <td>
+                    <ul *ngFor="let tech of ws.techStacks">
+                        <li class="font-smaller">
+                            {{ tech }}
+                        </li>
+                    </ul>
+                </td>
+                  <td>{{ws.isHaveTerraform ? "✓" : ""}}</td>
+                </tr>
+              </table>
         </div>
-        <ul>
-            <li>Deploy static site to S3 <a href="https://d9akteslg4v3w.cloudfront.net/001-deploy-static-site-to-s3/" target="_blank">link</a></li>
-        </ul>
-        <span>😂😂😂😂 Sorry for the UI 😅😅😅😅</span>
     </div>
 </div>
