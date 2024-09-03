@@ -15,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: BlogComponent
+    loadChildren: () =>
+      import('../not-found/not-found.module').then(m => m.NotFoundModule),
   }
 ];
 

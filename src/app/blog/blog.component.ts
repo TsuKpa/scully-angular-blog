@@ -2,6 +2,7 @@ import { AfterViewChecked, Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { SocialTagsService } from '../social-tags.service';
 import { HighlightService } from './../highlight.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-blog',
@@ -21,6 +22,7 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     constructor(
         private highlightService: HighlightService,
         private socialTagService: SocialTagsService,
+        private router: Router
     ) {
     }
 
@@ -41,6 +43,11 @@ export class BlogComponent implements OnInit, AfterViewChecked {
                 });
 
                 this.date = post.createdDate || "";
+            } else {
+                console.log(this.router.url);
+                if (!this.router.url.includes("/tags/")) {
+                    this.router.navigate(["/not-found"]);
+                }
             }
         });
     }

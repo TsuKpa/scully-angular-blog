@@ -7,6 +7,7 @@ const routes: Routes = [
     { path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule) },
     { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
     { path: 'aws-workshops', loadChildren: () => import('./aws-workshops/aws-workshops.module').then(m => m.AWSWorkshopsModule) },
+    { path: '404', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) }, 
     { path: '**', pathMatch: 'full', loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule) }, 
 ];
 
