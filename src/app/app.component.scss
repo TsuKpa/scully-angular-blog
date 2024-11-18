@@ -68,6 +68,14 @@
         }
     }
 
+    app-aws-workshops {
+        .container-body .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+
     @media only screen and (max-width: 640px) {
         .container-blog {
             max-width: none;
@@ -76,6 +84,13 @@
             .blog-post {
                 margin-top: 1rem;
                 padding: 0 1rem;
+            }
+        }
+
+        app-aws-workshops {
+            .container-body .container {
+                background-color: #000;
+                box-shadow: none !important;
             }
         }
     }
