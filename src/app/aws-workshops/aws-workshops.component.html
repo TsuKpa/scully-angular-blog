@@ -1,35 +1,31 @@
 <div class="container-body">
-    <div class="container">
-        <h2 class="title">
-            There are all of my AWS Workshops
-        </h2>
-        <div class="table-container">
-            <table>
-                <tr>
-                  <th>#</th>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>URL</th>
-                  <th>Tech Stacks</th>
-                  <th>Terraform</th>
-                </tr>
-                <tr *ngFor="let ws of listWorkshops">
-                  <td>{{ws.id}}</td>
-                  <td class="text-left">{{ws.title}}</td>
-                  <td class="text-left">{{ws.description}}</td>
-                  <td class="text-left">
-                    <a href="{{ws.url}}" target="_blank">link</a>
-                  </td>
-                  <td>
-                    <ul *ngFor="let tech of ws.techStacks">
-                        <li class="font-smaller">
-                            {{ tech }}
-                        </li>
-                    </ul>
-                </td>
-                  <td>{{ws.isHaveTerraform ? "✓" : ""}}</td>
-                </tr>
-              </table>
-        </div>
+  <div class="container">
+    <h2 class="title">
+      My current AWS certificates ({{listCertificates.length || 0}})
+    </h2>
+    <div class="badge-container">
+      <ng-container *ngFor="let item of listCertificates">
+        <img [src]="item.url" alt="Image" (click)="openBadge(item.badge)">
+      </ng-container>
     </div>
+  </div>
+  <div class="container mt-0">
+    <h2 class="title">
+      There are all of my AWS Workshops ({{listWorkshops.length || 0}})
+    </h2>
+    <div class="card-grid">
+      <ng-container *ngFor="let item of listWorkshops">
+        <div class="card">
+          <img [src]="item.img" alt="Image">
+          <div class="title center">
+            <p class="line-clamp clamp-3">{{item.title}}</p>
+          </div>
+          <div class="description">
+            <p class="line-clamp clamp-4">{{item.description}}</p>
+          </div>
+          <a class="btn-detail" [href]="item.url" target="_blank" referrerpolicy="no-referrer">Detail</a>
+        </div>
+      </ng-container>
+    </div>
+  </div>
 </div>
