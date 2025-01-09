@@ -32,6 +32,15 @@ export const workshops: WorkShop[] = [
         techStacks: ["SES", "Amazon Bedrock", "SQS", "Lambda", "S3"],
         isHaveTerraform: true
     },
+    {
+        id: "003",
+        title: "Deploy Laravel Application to EC2 with High Availability",
+        description: "Deploy Laravel project to EC2 with Auto Scaling, Load balancing, send notification, ensure best practice in security when working with VPC and IAM",
+        url: "https://003.tsukpa.blog",
+        img: "https://d9akteslg4v3w.cloudfront.net/blog/images/003-deploy-ec2-laravel-auto-scaling.png",
+        techStacks: ["EC2", "ALB", "Secret Manager", "Cloudwatch", "AutoScaling"],
+        isHaveTerraform: true
+    },
 ];
 
 export const listCertificates: Certificate[] = [
