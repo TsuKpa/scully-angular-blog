@@ -7,7 +7,7 @@ authors:
   - Nam Nguyen (TsuKpa)
 createdDate: 06 March, 2025
 tags:
-  - Vietnamese
+  - VietNamese
   - interview
 lastmod: 2025-3-06T05:34:51.411Z
 topics:
@@ -107,22 +107,22 @@ Database:
 - View trong SQL là gì
 - Having với where khác gì nhau
 
-Frontend:
-    - Các cách quản lý state
-    - Các cách tối ưu frontend
-    - Interceptor trong axios
-    - Luồng đăng nhập cơ bản
-    - Các component giao tiếp với nhau như thế nào
-    - Các tính năng cơ bản (Ví dụ Directive trong Angular để làm gì)
-    - Bootstrap với tailwind khác gì nhau
+Frontend:    
+- Các cách quản lý state
+- Các cách tối ưu frontend
+- Interceptor trong axios
+- Luồng đăng nhập cơ bản
+- Các component giao tiếp với nhau như thế nào
+- Các tính năng cơ bản (Ví dụ Directive trong Angular để làm gì)
+- Bootstrap với tailwind khác gì nhau
 
 Backend - NestJS/NodeJS
-    - Cơ chế hoạt động NodeJS- Javascript- v8 engine
-    - Các loại decorator thường dùng trong NestJS
-    - Kết nối database bằng gì?
-    - Trường hợp Promise nếu có 1 cái lỗi thì bỏ qua -> Promise.allSettled -> Gửi email
+- Cơ chế hoạt động NodeJS- Javascript- v8 engine
+- Các loại decorator thường dùng trong NestJS
+- Kết nối database bằng gì?
+- Trường hợp Promise nếu có 1 cái lỗi thì bỏ qua -> Promise.allSettled -> Gửi email
 
-
+Câu hỏi chung chung
 - Phân biệt localstorage, sessionstorage và cookie
 - Angular và React khác nhau điểm nào
 - Thiết kế database order, user, orderpayment
